@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ibashkimi.providerstools.widget.chart.ChartDisplay xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/display"
+    style="?attr/chartStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:chartPreviewMode="true"
+    app:chartXRangeMaximum="10"
+    app:chartXRangeMinimum="10" />

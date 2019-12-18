@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string-array name="settings_nav_bar_color_human_value" tools:ignore="InconsistentArrays">
+        <item>@string/settings_nav_bar_color_system</item>
+        <item>@string/settings_nav_bar_color_theme</item>
+        <item>@string/settings_nav_bar_color_white</item>
+        <item>@string/settings_nav_bar_color_black</item>
+    </string-array>
+
+    <string-array name="settings_nav_bar_color_phone_value" translatable="false" tools:ignore="InconsistentArrays">
+        <item>system</item>
+        <item>theme</item>
+        <item>white</item>
+        <item>black</item>
+    </string-array>
+</resources>

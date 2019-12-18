@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_unit">Njësia matëse</string>
+    <string name="action_settings">Preferencat</string>
+    <string name="change_unit_title">Përzgjidh njësinë</string>
+    <string name="accelerometer_title">Accelerometer</string>
+    <string name="level_title">Nivel</string>
+    <string name="level_roll">Roll</string>
+    <string name="level_pitch">Pitch</string>
+    <string name="hygrometer_title">Hygrometer</string>
+    <string name="light_meter_title">Matës i ndriçimit</string>
+    <string name="magnetometer_title">Magnetometer</string>
+    <string name="barometer_title">Barometër</string>
+    <string name="compass_title">Busull</string>
+    <string name="compass_direction_north">V</string>
+    <string name="compass_direction_south">J</string>
+    <string name="compass_direction_west">P</string>
+    <string name="compass_direction_est">L</string>
+    <string name="compass_direction_north_east">VL</string>
+    <string name="compass_direction_south_east">SL</string>
+    <string name="compass_direction_south_west">SP</string>
+    <string name="compass_direction_north_west">NP</string>
+    <string name="thermometer_title">Termometer</string>
+    <string name="unit_degree_full">Gradë (°)</string>
+    <string name="unit_percent_full">Përqind (%)</string>
+    <string name="unit_lx_full">Lux (lx)</string>
+    <string name="unit_micro_tesla_full">Mikro Tesla (μT)</string>
+    <string name="unit_celsius_full">Celsius (°C)</string>
+    <string name="unit_fahrenheit_full">Fahrenheit (°F)</string>
+    <string name="unit_kelvin_full">Kelvin (K)</string>
+
+    <!--Advanced settings-->
+    <string name="action_personalize">Personalizo</string>
+    <string name="action_sampling_rate">Frekuenca e sensorit</string>
+    <string name="settings_sampling_rate_title">Frekuenca e përditësimit të sensorit</string>
+    <string name="settings_sampling_highest">Shumë e lartë</string>
+    <string name="settings_sampling_high">E lartë</string>
+    <string name="settings_sampling_normal">Normale</string>
+    <string name="settings_sampling_low">E ulët</string>
+
+    <!--Layout settings-->
+    <string name="pref_layout_title">Layout</string>
+    <string name="section1_title">Widget 1</string>
+    <string name="section2_title">Widget 2</string>
+    <string name="section3_title">Widget 3</string>
+
+    <!-- Premium -->
+    <string name="preview_title">Preview</string>
+    <string name="privacy_policy">Privacy Policy</string>
+</resources>

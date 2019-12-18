@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="preferences_sensor_rate_human_value">
+        <item>@string/settings_sampling_highest</item>
+        <item>@string/settings_sampling_high</item>
+        <item>@string/settings_sampling_normal</item>
+        <item>@string/settings_sampling_low</item>
+    </string-array>
+
+    <string-array name="preferences_sensor_rate_phone_value" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

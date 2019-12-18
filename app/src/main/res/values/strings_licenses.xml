@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="apache_v2" translatable="false">Apache License, Version 2.0</string>
+
+    <string name="android_jetpack_name" translatable="false">Android Jetpack</string>
+    <string name="android_jetpack_website" translatable="false">https://developer.android.com/jetpack</string>
+    <string name="android_jetpack_license" translatable="false">@string/apache_v2</string>
+
+    <string name="mp_android_chart_name" translatable="false">MPAndroidChart</string>
+    <string name="mp_android_chart_website" translatable="false">https://github.com/PhilJay/MPAndroidChart</string>
+    <string name="mp_android_chart_license" translatable="false">@string/apache_v2</string>
+
+    <string name="kotlin_name" translatable="false">Kotlin</string>
+    <string name="kotlin_website" translatable="false">https://github.com/JetBrains/kotlin</string>
+    <string name="kotlin_license" translatable="false">@string/apache_v2</string>
+</resources>

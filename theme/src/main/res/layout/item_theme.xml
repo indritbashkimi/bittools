@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:minWidth="90dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="false"
+    tools:layout_height="wrap_content"
+    tools:layout_width="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/first"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            tools:background="#303F9F" />
+
+        <FrameLayout
+            android:id="@+id/second"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            tools:background="#3F51B5">
+
+            <ImageView
+                android:id="@+id/lock_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:layout_margin="8dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_lock"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:windowBackground"
+            android:gravity="bottom|end"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/third"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="end"
+                android:layout_margin="16dp"
+                android:background="@drawable/circle"
+                tools:backgroundTint="#E91E63" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/border_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/item_selected"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tool_settings_dialog"
+    app:startDestination="@id/tool_settings">
+    <dialog
+        android:id="@+id/tool_settings"
+        android:name="com.ibashkimi.providerstools.settings.ToolSettingsDialogFragment">
+        <argument
+            android:name="tool"
+            app:argType="com.ibashkimi.shared.Tool" />
+        <action
+            android:id="@+id/action_toolSettings_to_personalize"
+            app:destination="@id/personalize"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </dialog>
+    <fragment
+        android:id="@+id/personalize"
+        android:name="com.ibashkimi.providerstools.settings.ProviderSettingsFragment">
+        <argument
+            android:name="tool"
+            app:argType="com.ibashkimi.shared.Tool" />
+    </fragment>
+
+</navigation>

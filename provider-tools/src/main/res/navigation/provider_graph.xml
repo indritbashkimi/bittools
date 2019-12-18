@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/provider_tool"
+    app:startDestination="@id/providerFragment">
+
+    <fragment
+        android:id="@+id/providerFragment"
+        android:name="com.ibashkimi.providerstools.ProviderFragment">
+        <argument
+            android:name="tool"
+            app:argType="com.ibashkimi.shared.Tool" />
+        <action
+            android:id="@+id/action_providerFragment_to_providerSettings"
+            app:destination="@id/providerSettings"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/providerSettings"
+        android:name="com.ibashkimi.providerstools.settings.ProviderSettingsFragment">
+        <argument
+            android:name="tool"
+            app:argType="com.ibashkimi.shared.Tool" />
+    </fragment>
+
+</navigation>

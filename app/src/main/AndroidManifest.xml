@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ibashkimi.bittools">
+
+    <!-- https://developer.android.com/guide/topics/manifest/uses-feature-element.html -->
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.ambient_temperature"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.barometer"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.compass"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.light"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.sensor.relative_humidity"
+        android:required="false" />
+    <!--
+        <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="false" />
+
+        <uses-feature
+        android:name="android.hardware.sensor.heartrate"
+        android:required="false" />
+
+        <uses-feature
+        android:name="android.hardware.sensor.heartrate.ecg"
+        android:required="false" />
+
+        <uses-feature
+        android:name="android.hardware.sensor.proximity"
+        android:required="false" />
+
+        <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="false" />
+    -->
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.DayNight"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

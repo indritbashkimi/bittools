@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_unit">Unità</string>
+    <string name="action_settings">Impostaioni</string>
+    <string name="change_unit_title">Seleziona unità</string>
+    <string name="accelerometer_title">Accelerometro</string>
+    <string name="level_title">Livella</string>
+    <string name="level_roll">Roll</string>
+    <string name="level_pitch">Pitch</string>
+    <string name="hygrometer_title">Igrometro</string>
+    <string name="light_meter_title">Misuratore luce</string>
+    <string name="magnetometer_title">Magnetometro</string>
+    <string name="unit_hpa">hPa</string>
+    <string name="barometer_title">Barometro</string>
+    <string name="compass_title">Bussola</string>
+    <string name="compass_direction_north">N</string>
+    <string name="compass_direction_south">S</string>
+    <string name="compass_direction_west">W</string>
+    <string name="compass_direction_est">E</string>
+    <string name="compass_direction_north_east">NE</string>
+    <string name="compass_direction_south_east">SE</string>
+    <string name="compass_direction_south_west">SW</string>
+    <string name="compass_direction_north_west">NW</string>
+    <string name="thermometer_title">Termometro</string>
+    <string name="unit_degree_full">Gradi (°)</string>
+    <string name="unit_percent_full">Percentuale (%)</string>
+    <string name="unit_lx_full">Lux (lx)</string>
+    <string name="unit_micro_tesla_full">Micro Tesla (μT)</string>
+    <string name="unit_celsius_full">Celsius (°C)</string>
+    <string name="unit_fahrenheit_full">Fahrenheit (°F)</string>
+    <string name="unit_kelvin_full">Kelvin (K)</string>
+
+    <!--Advanced settings-->
+    <string name="action_personalize">Personalizza</string>
+    <string name="action_sampling_rate">Campionamento</string>
+    <string name="settings_sampling_rate_title">Frequenza di campionamento del sensore</string>
+    <string name="settings_sampling_highest">Altissimo</string>
+    <string name="settings_sampling_high">Alto</string>
+    <string name="settings_sampling_normal">Normale</string>
+    <string name="settings_sampling_low">Basso</string>
+
+    <!--Layout settings-->
+    <string name="pref_layout_title">Layout</string>
+    <string name="section1_title">Widget 1</string>
+    <string name="section2_title">Widget 2</string>
+    <string name="section3_title">Widget 3</string>
+
+    <!-- Premium -->
+    <string name="preview_title">Anteprima</string>
+    <string name="privacy_policy">Privacy Policy</string>
+</resources>

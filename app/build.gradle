@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion versions.android.compileSdk
+    buildToolsVersion versions.android.buildTools
+    defaultConfig {
+        applicationId "com.ibashkimi.bittools"
+        minSdkVersion versions.android.minSdk
+        targetSdkVersion versions.android.targetSdk
+        versionCode 20
+        versionName '1.4.1'
+        resConfigs "en", "it", "sq"
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix '-dev'
+        }
+        release {
+            /*lintOptions {
+                disable 'MissingTranslation'
+            }*/
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    testImplementation deps.test.junit
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':provider-tools')
+    implementation project(':ruler')
+    implementation deps.kotlin.stdlib
+    implementation deps.androidx.browser
+    kapt deps.lifecycle.compiler
+    implementation deps.androidx.core
+    implementation deps.androidx.recyclerview
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.AppTheme.AppBar.Dark" parent="ThemeOverlay.MaterialComponents.Dark" />
+
+    <style name="Widget.AppTheme.AppBar.Light" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="Widget.AppTheme.Toolbar.Dark" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
+    </style>
+
+    <style name="Widget.AppTheme.Toolbar.Light" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.ActionBar</item>
+    </style>
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+
+    <style name="MyCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">?colorSurface</item>
+    </style>
+
+    <style name="ErrorCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">?colorError</item>
+        <item name="android:textColor">?colorOnError</item>
+    </style>
+
+</resources>

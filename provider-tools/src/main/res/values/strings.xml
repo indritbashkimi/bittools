@@ -1,0 +1,70 @@
+<resources>
+    <string name="action_unit">Unit</string>
+    <string name="action_settings">Settings</string>
+    <string name="change_unit_title">Select unit</string>
+    <string name="accelerometer_title">Accelerometer</string>
+    <string name="level_title">Level</string>
+    <string name="level_roll">Roll</string>
+    <string name="level_pitch">Pitch</string>
+    <string name="hygrometer_title">Hygrometer</string>
+    <string name="light_meter_title">Light Meter</string>
+    <string name="magnetometer_title">Magnetometer</string>
+    <string name="thermometer_title">Thermometer</string>
+    <string name="barometer_title">Barometer</string>
+    <string name="compass_title">Compass</string>
+    <string name="compass_direction_north">N</string>
+    <string name="compass_direction_south">S</string>
+    <string name="compass_direction_west">W</string>
+    <string name="compass_direction_est">E</string>
+    <string name="compass_direction_north_east">NE</string>
+    <string name="compass_direction_south_east">SE</string>
+    <string name="compass_direction_south_west">SW</string>
+    <string name="compass_direction_north_west">NW</string>
+
+    <!-- Units -->
+    <string name="unit_degree" translatable="false">°</string>
+    <string name="unit_degree_full">Degrees (°)</string>
+    <string name="unit_m_s_2" translatable="false">m/s²</string>
+    <string name="unit_m_s_2_full" translatable="false">m/s²</string>
+    <string name="unit_percent" translatable="false">%</string>
+    <string name="unit_percent_full">Percent (%)</string>
+    <string name="unit_lx" translatable="false">lx</string>
+    <string name="unit_lx_full">Lux (lx)</string>
+    <string name="unit_micro_tesla" translatable="false">μT</string>
+    <string name="unit_micro_tesla_full">Micro Tesla (μT)</string>
+    <string name="unit_celsius" translatable="false">°C</string>
+    <string name="unit_celsius_full">Celsius (°C)</string>
+    <string name="unit_fahrenheit" translatable="false">°F</string>
+    <string name="unit_fahrenheit_full">Fahrenheit (°F)</string>
+    <string name="unit_kelvin" translatable="false">K</string>
+    <string name="unit_kelvin_full">Kelvin (K)</string>
+    <string name="unit_hpa" translatable="false">hPa</string>
+    <string name="unit_hpa_full" translatable="false">hPa</string>
+    <string name="unit_atm" translatable="false">atm</string>
+    <string name="unit_atm_full" translatable="false">atm</string>
+    <string name="unit_torr" translatable="false">torr</string>
+    <string name="unit_torr_full" translatable="false">torr</string>
+
+    <!--Advanced settings-->
+    <string name="action_personalize">Personalize</string>
+    <string name="action_sampling_rate">Sampling rate</string>
+    <string name="settings_sampling_rate_title">Sensor sampling rate</string>
+    <string name="settings_sampling_highest">Highest</string>
+    <string name="settings_sampling_high">High</string>
+    <string name="settings_sampling_normal">Normal</string>
+    <string name="settings_sampling_low">Low</string>
+
+    <!--Layout settings-->
+    <string name="pref_layout_title">Layout</string>
+    <string name="section1_title">Widget 1</string>
+    <string name="section2_title">Widget 2</string>
+    <string name="section3_title">Widget 3</string>
+    <string name="section_n_1" translatable="false">1</string>
+    <string name="section_n_2" translatable="false">2</string>
+    <string name="section_n_3" translatable="false">3</string>
+
+    <!-- Premium -->
+    <string name="preview_title">Preview</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+</resources>

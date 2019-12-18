@@ -1,0 +1,94 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.preference.PreferenceCategory android:title="@string/appearance_preference">
+
+        <androidx.preference.ListPreference
+            android:defaultValue="day"
+            android:dialogTitle="@string/dialog_title_night_mode_list_preference"
+            android:entries="@array/settings_theme_human_value"
+            android:entryValues="@array/settings_theme_phone_value"
+            android:icon="@drawable/ic_pref_night_mode"
+            android:key="night_mode"
+            android:summary="%s"
+            android:title="@string/pref_night_mode_title" />
+
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_theme"
+            android:key="theme"
+            android:title="@string/pref_title_theme" />
+
+        <androidx.preference.ListPreference
+            android:defaultValue="system"
+            android:dialogTitle="@string/dialog_title_nav_bar_color_preference"
+            android:entries="@array/settings_nav_bar_color_human_value"
+            android:entryValues="@array/settings_nav_bar_color_phone_value"
+            android:icon="@drawable/ic_nav_bar_color"
+            android:key="nav_bar_color"
+            android:summary="%s"
+            android:title="@string/pref_nav_bar_color_title" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory android:title="@string/preference_general">
+
+        <androidx.preference.ListPreference
+            android:defaultValue="auto"
+            android:dialogTitle="@string/dialog_title_screen_rotation_list_preference"
+            android:entries="@array/settings_rotation"
+            android:entryValues="@array/settings_rotation_values"
+            android:icon="@drawable/ic_pref_screen_rotation"
+            android:key="screen_rotation"
+            android:summary="%s"
+            android:title="@string/pref_screen_rotation_title" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:icon="@drawable/ic_pref_screen_on"
+            android:key="keep_screen_on"
+            android:summary="@string/preference_keep_screen_on_summary"
+            android:title="@string/preference_keep_screen_on" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:icon="@drawable/ic_pref_hide_tools"
+            android:key="show_unsupported_tools"
+            android:title="@string/preference_show_unsupported_tools" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory android:title="@string/pref_tools_title">
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_accelerometer"
+            android:key="accelerometer"
+            android:title="@string/accelerometer_title" />
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_barometer"
+            android:key="barometer"
+            android:title="@string/barometer_title" />
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_compass"
+            android:key="compass"
+            android:title="@string/compass_title" />
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_hygrometer"
+            android:key="hygrometer"
+            android:title="@string/hygrometer_title" />
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_level"
+            android:key="level"
+            android:title="@string/level_title" />
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_light_meter"
+            android:key="light"
+            android:title="@string/light_meter_title" />
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_magnetometer"
+            android:key="magnetometer"
+            android:title="@string/magnetometer_title" />
+        <androidx.preference.Preference
+            android:icon="@drawable/ic_pref_thermometer"
+            android:key="thermometer"
+            android:title="@string/thermometer_title" />
+    </androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

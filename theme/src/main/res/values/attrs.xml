@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExtraStyle">
+        <!-- Look at https://material.io/design/color/the-color-system.html#color-theme-creation -->
+
+        <attr name="colorPrimaryLight" format="color" />
+        <attr name="colorSecondaryLight" format="color" />
+        <attr name="colorSecondaryDark" format="color" />
+
+        <attr name="surfaceStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AppBarStyle">
+        <attr name="appBarStyle" format="reference" />
+    </declare-styleable>
+</resources>

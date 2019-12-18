@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home">
+    <fragment
+        android:id="@+id/home"
+        android:name="com.ibashkimi.bittools.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_home_to_about"
+            app:destination="@id/about"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_to_settings"
+            app:destination="@id/settings"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_to_provider_tool"
+            app:destination="@id/provider_tool"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="tool"
+                app:argType="com.ibashkimi.shared.Tool" />
+        </action>
+        <action
+            android:id="@+id/action_home_to_ruler"
+            app:destination="@id/ruler"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_home_to_protractor"
+            app:destination="@id/protractor"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/about"
+        android:name="com.ibashkimi.bittools.about.AboutFragment"
+        android:label="@string/action_about">
+        <action
+            android:id="@+id/action_action_to_licenses"
+            app:destination="@id/licenses"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_about_to_privacyPolicy"
+            app:destination="@id/privacyPolicy"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyPolicy"
+        android:name="com.ibashkimi.bittools.about.PrivacyPolicyFragment"
+        android:label="PrivacyPolicyFragment" />
+    <fragment
+        android:id="@+id/licenses"
+        android:name="com.ibashkimi.bittools.about.LicensesFragment"
+        android:label="@string/licences_title" />
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.ibashkimi.bittools.settings.SettingsFragment"
+        android:label="@string/action_settings">
+        <action
+            android:id="@+id/action_settings_to_themeSelector"
+            app:destination="@id/themeSelector"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_settings_to_providerSettings"
+            app:destination="@id/tool_settings_dialog"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim">
+            <argument
+                android:name="tool"
+                app:argType="com.ibashkimi.shared.Tool" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/themeSelector"
+        android:name="com.ibashkimi.bittools.settings.ThemeFragment"
+        android:label="@string/title_change_theme"/>
+
+    <include app:graph="@navigation/provider_graph" />
+
+    <include app:graph="@navigation/tool_settings" />
+
+    <fragment
+        android:id="@+id/ruler"
+        android:name="com.ibashkimi.ruler.ruler1.Ruler1Fragment"
+        android:label="Ruler1Fragment" />
+    <fragment
+        android:id="@+id/protractor"
+        android:name="com.ibashkimi.ruler.protractor.ProtractorFragment"
+        android:label="ProtractorFragment" />
+</navigation>

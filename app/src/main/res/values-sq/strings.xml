@@ -1,0 +1,48 @@
+<resources>
+    <string name="action_settings">Preferencat</string>
+    <string name="action_about">Informacion</string>
+
+    <!-- Strings related to Settings -->
+    <string name="dialog_title_night_mode_list_preference">Modaliteti natë</string>
+    <string name="settings_night_mode_auto">Auto</string>
+    <string name="settings_night_mode_on">On</string>
+    <string name="settings_night_mode_off">Off</string>
+    <string name="pref_nav_bar_color_title">Navigation bar color</string>
+    <string name="settings_nav_bar_color_system">Sistemi</string>
+    <string name="settings_nav_bar_color_theme">Tema</string>
+    <string name="settings_nav_bar_color_white">E bardhë</string>
+    <string name="settings_nav_bar_color_black">E zezë</string>
+    <string name="appearance_preference">Paraqitja</string>
+    <string name="pref_night_mode_title">Modaliteti natë</string>
+    <string name="app_description">Një koleksion mjetesh për matjen e të dhënave të sensorëve në pajisjen tuaj</string>
+    <string name="pref_tools_title">Mjete</string>
+    <string name="preference_general">General</string>
+    <string name="preference_show_unsupported_tools">Show unsupported tools</string>
+    <string name="unsupported_tools_msg">The following tools are not supported because of missing sensors</string>
+    <string name="hide">Hide</string>
+    <string name="unsupported_tools_hidden_msg">Unsupported tools hidden. Go to settings to get them back.</string>
+    <string name="preference_keep_screen_on">Keep screen on</string>
+    <string name="preference_keep_screen_on_summary">Keep screen on while using tools</string>
+    <string name="dialog_title_screen_rotation_list_preference">Screen rotation</string>
+    <string name="pref_screen_rotation_title">Screen rotation</string>
+    <string name="pref_rotation_auto">Auto</string>
+    <string name="pref_rotation_portrait">Portrait</string>
+    <string name="pref_rotation_landscape">Landscape</string>
+
+    <string name="feedback_subject">Feedback BitTools</string>
+    <string name="feedback_chooser_title">Dërgo email…</string>
+    <string name="version">Versioni %s</string>
+
+    <string name="open_source_description">This app is open source and is licensed under Apache 2.0.</string>
+    <string name="source_code_title"><u>Source code</u></string>
+    <string name="source_code_url" translatable="false">https://github.com/indritbashkimi/bittools</string>
+
+    <string name="about_header_help">Ndihmë</string>
+    <string name="about_send_feedback">Dërgo feedback</string>
+    <string name="about_header_legal">Legal</string>
+    <string name="about_licenses">Liçensat</string>
+    <string name="licences_title">Liçensat</string>
+    <string name="about_lib_intro">Ky aplikacion përdor libraritë me burim të hapur në vijim.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="open_privacy_policy_url">Open URL</string>
+</resources>

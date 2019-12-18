@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_unit"
+        android:orderInCategory="100"
+        android:title="@string/action_unit"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sampling"
+        android:orderInCategory="100"
+        android:title="@string/action_sampling_rate"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_personalize"
+        app:showAsAction="never" />
+</menu>

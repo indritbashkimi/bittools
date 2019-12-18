@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion versions.android.compileSdk
+    buildToolsVersion versions.android.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.android.minSdk
+        targetSdkVersion versions.android.targetSdk
+        versionCode 5
+        versionName "0.3.2"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation deps.test.runner
+    androidTestImplementation deps.test.espresso.core
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation deps.kotlin.stdlib
+    api deps.google.material
+    api deps.androidx.appcompat
+    api deps.androidx.annotation
+    api deps.androidx.cardview
+    api deps.androidx.preference
+    implementation deps.androidx.gridlayout
+    implementation deps.androidx.palette
+    implementation deps.androidx.recyclerview
+}

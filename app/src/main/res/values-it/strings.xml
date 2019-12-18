@@ -1,0 +1,48 @@
+<resources>
+    <string name="action_settings">Impostazioni</string>
+    <string name="action_about">Informazioni</string>
+
+    <!-- Strings related to Settings -->
+    <string name="dialog_title_night_mode_list_preference">Modalità notte</string>
+    <string name="settings_night_mode_auto">Auto</string>
+    <string name="settings_night_mode_on">On</string>
+    <string name="settings_night_mode_off">Off</string>
+    <string name="pref_nav_bar_color_title">Colore barra navigazione</string>
+    <string name="settings_nav_bar_color_system">Sistema</string>
+    <string name="settings_nav_bar_color_theme">Tema</string>
+    <string name="settings_nav_bar_color_white">Bianco</string>
+    <string name="settings_nav_bar_color_black">Nero</string>
+    <string name="appearance_preference">Aspetto</string>
+    <string name="pref_night_mode_title">Modalità notte</string>
+    <string name="app_description">Una raccolta di strumenti per misurare i dati dei sensori nel dispositivo</string>
+    <string name="pref_tools_title">Strumenti</string>
+    <string name="preference_general">Generale</string>
+    <string name="preference_show_unsupported_tools">Mostra strumenti non supportati</string>
+    <string name="unsupported_tools_msg">I seguenti strumenti non sono supportati a causa di sensori mancanti</string>
+    <string name="hide">Nascondi</string>
+    <string name="unsupported_tools_hidden_msg">Strumenti non supportati nascosti. Go to settings to get them back.</string>
+    <string name="preference_keep_screen_on">Keep screen on</string>
+    <string name="preference_keep_screen_on_summary">Keep screen on while using tools</string>
+    <string name="dialog_title_screen_rotation_list_preference">Rotazione schermo</string>
+    <string name="pref_screen_rotation_title">Rotazione schermo</string>
+    <string name="pref_rotation_auto">Auto</string>
+    <string name="pref_rotation_portrait">Verticale</string>
+    <string name="pref_rotation_landscape">Orizzontale</string>
+
+    <string name="feedback_subject">Feedback BitTools</string>
+    <string name="feedback_chooser_title">Invia email…</string>
+    <string name="version">Versione %s</string>
+
+    <string name="open_source_description">This app is open source and is licensed under Apache 2.0.</string>
+    <string name="source_code_title"><u>Source code</u></string>
+    <string name="source_code_url" translatable="false">https://github.com/indritbashkimi/bittools</string>
+
+    <string name="about_header_help">Aiuto</string>
+    <string name="about_send_feedback">Invia feedback</string>
+    <string name="about_header_legal">Legale</string>
+    <string name="about_licenses">Licenze</string>
+    <string name="licences_title">Licenze</string>
+    <string name="about_lib_intro">Questa app utilizza le seguenti librerie open source.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="open_privacy_policy_url">Open URL</string>
+</resources>
