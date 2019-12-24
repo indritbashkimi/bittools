@@ -38,4 +38,5 @@ dependencies {
     testImplementation deps.test.junit
     androidTestImplementation deps.test.espresso.core
     implementation deps.kotlin.stdlib
+    implementation deps.kotlin.coroutines
 }
