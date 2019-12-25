@@ -13,14 +13,15 @@ import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.OrientationData;
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.DisplayParams;
-import com.ibashkimi.providerstools.ProviderDisplay;
+import com.ibashkimi.providerstools.model.DisplayParams;
+import com.ibashkimi.providerstools.model.ProviderDisplay;
 import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.MathUtils;
 import com.ibashkimi.theme.utils.StyleUtils;
 
 
 public class Compass extends FrameLayout implements ProviderDisplay {
+
     private CompassBoard mBoard;
     private TextView mTextView;
     private int mCurrentDegree;
@@ -91,7 +92,7 @@ public class Compass extends FrameLayout implements ProviderDisplay {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
-        int size = width > height ? height : width;
+        int size = Math.min(width, height);
         setMeasuredDimension(size, size);
     }
 
@@ -110,11 +111,6 @@ public class Compass extends FrameLayout implements ProviderDisplay {
     @Override
     public void onDataChanged(@NonNull SensorData data) {
         setAzimuth(((OrientationData) data).getAzimuth());
-    }
-
-    @Override
-    public void onStateChanged(int event) {
-
     }
 
     @Override

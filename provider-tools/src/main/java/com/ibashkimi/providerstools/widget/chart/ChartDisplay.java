@@ -17,9 +17,9 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.Chart;
-import com.ibashkimi.providerstools.DisplayParams;
-import com.ibashkimi.providerstools.ProviderDisplay;
+import com.ibashkimi.providerstools.model.Chart;
+import com.ibashkimi.providerstools.model.DisplayParams;
+import com.ibashkimi.providerstools.model.ProviderDisplay;
 import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.StyleUtils;
 
@@ -194,11 +194,6 @@ public class ChartDisplay extends LineChart implements Chart, ProviderDisplay {
     @Override
     public void onDataChanged(@NonNull SensorData data) {
         addValue(data.getModule());
-    }
-
-    @Override
-    public void onStateChanged(int event) {
-
     }
 
     @Override

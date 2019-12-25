@@ -15,8 +15,8 @@ import androidx.annotation.Nullable;
 
 import com.ibashkimi.provider.providerdata.OrientationData;
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.DisplayParams;
-import com.ibashkimi.providerstools.ProviderDisplay;
+import com.ibashkimi.providerstools.model.DisplayParams;
+import com.ibashkimi.providerstools.model.ProviderDisplay;
 import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.MathUtils;
 import com.ibashkimi.theme.utils.StyleUtils;
@@ -113,11 +113,6 @@ public class CompassVariant extends FrameLayout implements ProviderDisplay {
     @Override
     public void onDataChanged(@NonNull SensorData data) {
         setAzimuth(((OrientationData) data).getAzimuth());
-    }
-
-    @Override
-    public void onStateChanged(int event) {
-
     }
 
     @Override

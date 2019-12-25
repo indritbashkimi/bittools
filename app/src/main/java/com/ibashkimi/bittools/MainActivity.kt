@@ -8,8 +8,8 @@ import android.view.WindowManager
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
-import com.ibashkimi.providerstools.isProviderSupported
-import com.ibashkimi.providerstools.resolver.ToolPreferenceHelper
+import com.ibashkimi.providerstools.utils.isProviderSupported
+import com.ibashkimi.providerstools.utils.ToolPreferenceHelper
 import com.ibashkimi.shared.BitToolsActivity
 import com.ibashkimi.shared.PreferenceHelper
 import com.ibashkimi.shared.Tool

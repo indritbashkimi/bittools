@@ -6,8 +6,8 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.ibashkimi.provider.providerdata.SensorData
-import com.ibashkimi.providerstools.DisplayParams
-import com.ibashkimi.providerstools.ProviderDisplay
+import com.ibashkimi.providerstools.model.DisplayParams
+import com.ibashkimi.providerstools.model.ProviderDisplay
 import com.ibashkimi.providerstools.R
 import com.ibashkimi.theme.utils.StyleUtils
 import java.text.DecimalFormat
@@ -17,7 +17,8 @@ class PointerGauge @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
     defStyleRes: Int = 0
-) : View(context, attrs, defStyleAttr, defStyleRes), ProviderDisplay {
+) : View(context, attrs, defStyleAttr, defStyleRes),
+    ProviderDisplay {
 
     private val paint: Paint = Paint()
     private val textPaint: Paint = Paint()
@@ -220,10 +221,6 @@ class PointerGauge @JvmOverloads constructor(
     }
 
     override fun onDataChanged(data: SensorData) {
-
-    }
-
-    override fun onStateChanged(event: Int) {
 
     }
 

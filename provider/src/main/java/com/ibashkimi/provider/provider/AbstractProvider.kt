@@ -1,14 +1,14 @@
 package com.ibashkimi.provider.provider
 
 import android.util.Log
+import androidx.annotation.CallSuper
+import com.ibashkimi.provider.providerdata.SensorData
 import java.util.*
 
 
 abstract class AbstractProvider : Provider {
 
-    protected val listeners: HashSet<ProviderListener> by lazy {
-        HashSet<ProviderListener>(1)
-    }
+    private val listeners: HashSet<ProviderListener> = HashSet(1)
 
     protected var isListening: Boolean = false
 
@@ -27,12 +27,8 @@ abstract class AbstractProvider : Provider {
             Log.d(TAG, listener.javaClass.simpleName + " NOT registered. size = " + listeners.size)
     }
 
-    // @ProviderListener.ProviderEvent
     protected fun notifyEvent(event: Int) {
-        /*if (stateListeners != null) {
-            for (ProviderStateListener listener : stateListeners)
-                listener.onStateChanged(event);
-        }*/
+
     }
 
     override fun unregister(listener: ProviderListener) {
@@ -47,12 +43,18 @@ abstract class AbstractProvider : Provider {
         stopListening()
     }
 
+    @CallSuper
     open fun startListening() {
         isListening = true
     }
 
+    @CallSuper
     open fun stopListening() {
         isListening = false
+    }
+
+    protected fun onDataChanged(data: SensorData) {
+        listeners.forEach { it.onDataChanged(data) }
     }
 
     companion object {

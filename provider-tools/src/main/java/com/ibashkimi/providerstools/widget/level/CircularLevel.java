@@ -14,14 +14,14 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.DisplayParams;
-import com.ibashkimi.providerstools.ProviderDisplay;
 import com.ibashkimi.providerstools.R;
+import com.ibashkimi.providerstools.model.DisplayParams;
+import com.ibashkimi.providerstools.model.ProviderDisplay;
 import com.ibashkimi.theme.utils.StyleUtils;
 
 public class CircularLevel extends View implements ProviderDisplay {
 
-    private Paint paint = new Paint();
+    private Paint paint;
     private float centerX;
     private float centerY;
     private float radius;
@@ -126,11 +126,6 @@ public class CircularLevel extends View implements ProviderDisplay {
     @Override
     public void onDataChanged(@NonNull SensorData data) {
         update((float) data.getValues()[2], (float) data.getValues()[1]);
-    }
-
-    @Override
-    public void onStateChanged(int event) {
-
     }
 
     @Override

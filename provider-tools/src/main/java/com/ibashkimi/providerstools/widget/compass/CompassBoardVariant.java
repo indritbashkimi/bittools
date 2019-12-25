@@ -16,8 +16,8 @@ import androidx.annotation.Nullable;
 
 import com.ibashkimi.provider.providerdata.OrientationData;
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.DisplayParams;
-import com.ibashkimi.providerstools.ProviderDisplay;
+import com.ibashkimi.providerstools.model.DisplayParams;
+import com.ibashkimi.providerstools.model.ProviderDisplay;
 import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.StyleUtils;
 
@@ -277,11 +277,6 @@ public class CompassBoardVariant extends View implements ProviderDisplay {
     @Override
     public void onDataChanged(@NotNull SensorData data) {
         update(((OrientationData) data).getAzimuth());
-    }
-
-    @Override
-    public void onStateChanged(int event) {
-
     }
 
     public void setValue(int value) {

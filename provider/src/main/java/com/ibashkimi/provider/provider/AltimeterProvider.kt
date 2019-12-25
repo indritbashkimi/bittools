@@ -5,14 +5,13 @@ import android.location.Location
 import com.ibashkimi.provider.providerdata.UnidimensionalData
 
 
-class SpeedMeterProvider(
+class AltimeterProvider(
     context: Context,
     minTime: Int,
-    private val data: UnidimensionalData = UnidimensionalData()
+    val data: UnidimensionalData = UnidimensionalData()
 ) : GpsBasedProvider(context, minTime) {
 
     override fun onLocationChanged(location: Location) {
-        data.values[0] = location.speed.toDouble()
-        onDataChanged(data)
+        data.values[0] = location.altitude
     }
 }

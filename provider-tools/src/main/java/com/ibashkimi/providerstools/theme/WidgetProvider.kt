@@ -2,7 +2,7 @@ package com.ibashkimi.providerstools.theme
 
 import androidx.annotation.LayoutRes
 import com.ibashkimi.providerstools.R
-import com.ibashkimi.providerstools.resolver.layoutMap
+import com.ibashkimi.providerstools.utils.layoutMap
 import com.ibashkimi.shared.Tool
 
 class WidgetProvider(val tool: Tool) {

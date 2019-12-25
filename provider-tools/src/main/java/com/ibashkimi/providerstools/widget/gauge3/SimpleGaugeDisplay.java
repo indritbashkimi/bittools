@@ -6,8 +6,8 @@ import android.util.AttributeSet;
 import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.DisplayParams;
-import com.ibashkimi.providerstools.ProviderDisplay;
+import com.ibashkimi.providerstools.model.DisplayParams;
+import com.ibashkimi.providerstools.model.ProviderDisplay;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -32,10 +32,5 @@ public class SimpleGaugeDisplay extends SimpleGauge implements ProviderDisplay {
     @Override
     public void onDataChanged(@NotNull SensorData data) {
         setValue((int) data.getModule());
-    }
-
-    @Override
-    public void onStateChanged(int event) {
-
     }
 }

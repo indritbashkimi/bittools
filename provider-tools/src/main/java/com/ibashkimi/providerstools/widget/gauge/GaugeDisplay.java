@@ -6,8 +6,8 @@ import android.util.AttributeSet;
 import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.DisplayParams;
-import com.ibashkimi.providerstools.ProviderDisplay;
+import com.ibashkimi.providerstools.model.DisplayParams;
+import com.ibashkimi.providerstools.model.ProviderDisplay;
 
 import java.text.DecimalFormat;
 
@@ -32,11 +32,6 @@ public class GaugeDisplay extends Gauge implements ProviderDisplay {
     @Override
     public void onDataChanged(@NonNull SensorData data) {
         setValue(data.getModule());
-    }
-
-    @Override
-    public void onStateChanged(int event) {
-
     }
 
     @Override

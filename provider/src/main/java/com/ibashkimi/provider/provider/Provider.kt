@@ -10,6 +10,8 @@ interface Provider {
      */
     val isSupported: Boolean
 
+    val isSimulated: Boolean
+
     /**
      * Checks if the listener is registered.
      *
@@ -24,10 +26,6 @@ interface Provider {
      * @param listener the listener to register.
      */
     fun register(listener: ProviderListener)
-
-    //fun startListening()
-
-    //fun stopListening()
 
     /**
      * Unregisters the listener: it won't receive any more updated.

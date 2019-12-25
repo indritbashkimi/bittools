@@ -11,8 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.DisplayParams;
-import com.ibashkimi.providerstools.ProviderDisplay;
+import com.ibashkimi.providerstools.model.DisplayParams;
+import com.ibashkimi.providerstools.model.ProviderDisplay;
 import com.ibashkimi.providerstools.R;
 
 import java.text.DecimalFormat;
@@ -75,11 +75,6 @@ public class CompactDigitalView extends LinearLayout implements ProviderDisplay 
     @Override
     public void onDataChanged(@NonNull SensorData data) {
         setValue(data.getModule());
-    }
-
-    @Override
-    public void onStateChanged(int event) {
-
     }
 
     @Override

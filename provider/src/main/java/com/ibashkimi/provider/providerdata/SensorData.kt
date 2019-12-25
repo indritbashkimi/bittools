@@ -1,7 +1,5 @@
 package com.ibashkimi.provider.providerdata
 
-import java.util.*
-
 
 abstract class SensorData(val values: DoubleArray) {
 
@@ -19,13 +17,13 @@ abstract class SensorData(val values: DoubleArray) {
 
         other as SensorData
 
-        if (!Arrays.equals(values, other.values)) return false
+        if (!values.contentEquals(other.values)) return false
 
         return true
     }
 
     override fun hashCode(): Int {
-        var result = Arrays.hashCode(values)
+        var result = values.contentHashCode()
         result = 31 * result + module.hashCode()
         result = 31 * result + valueLength
         return result
