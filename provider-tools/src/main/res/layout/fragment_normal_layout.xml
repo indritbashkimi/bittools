@@ -19,7 +19,7 @@
 
         <FrameLayout
             android:id="@+id/container_2"
-            style="?attr/appBarStyle"
+            android:background="?colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

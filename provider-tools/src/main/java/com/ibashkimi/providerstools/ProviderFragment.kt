@@ -147,8 +147,9 @@ class ProviderFragment : Fragment() {
         displays.clear()
         for ((widgetPosition, widgetContainer) in displayMap) {
             val layoutRes = preferenceHelper.getWidgetLayout(widgetPosition)
-            val root = LayoutInflater.from(requireContext())
-                .inflate(layoutRes, rootView.findViewById<View>(widgetContainer) as ViewGroup, true)
+            val container = rootView.findViewById<View>(widgetContainer) as ViewGroup
+            val root = LayoutInflater.from(container.context)
+                .inflate(layoutRes, container, true)
             val display = root.findViewById<View>(R.id.display) as ProviderDisplay
             displays.add(display)
         }

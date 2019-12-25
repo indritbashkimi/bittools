@@ -22,18 +22,17 @@
             android:layout_height="wrap_content"
             android:baselineAligned="false"
             android:gravity="center"
+            android:background="?colorPrimary"
             android:orientation="horizontal">
 
             <FrameLayout
                 android:id="@+id/container_2"
-                style="?attr/appBarStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5" />
 
             <FrameLayout
                 android:id="@+id/container_3"
-                style="?attr/appBarStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5" />
