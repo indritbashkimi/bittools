@@ -2,6 +2,7 @@ package com.ibashkimi.provider.factories
 
 import android.content.Context
 import android.hardware.Sensor
+import android.hardware.SensorManager
 import com.ibashkimi.provider.filter.DummyFilter
 import com.ibashkimi.provider.filter.LowPassFilter
 import com.ibashkimi.provider.flow.*
@@ -146,25 +147,32 @@ object ProviderFactory {
         else -> throw Exception("Unknown sensor type $type.")
     }
 
-    private fun createSimulatedProvider(type: Int): Provider =
-        when (type) {
+    private fun createSimulatedProvider(type: Int, samplingRate: Int): Provider {
+        val delay = when (samplingRate) {
+            SensorManager.SENSOR_DELAY_FASTEST -> 15L
+            SensorManager.SENSOR_DELAY_GAME -> 30L
+            SensorManager.SENSOR_DELAY_UI -> 100L
+            SensorManager.SENSOR_DELAY_NORMAL -> 200L
+            else -> 200L
+        }
+        return when (type) {
             ProviderType.TYPE_ACCELEROMETER -> {
                 throw Exception("Unsupported sensor type for simulation.")
             }
             ProviderType.TYPE_ALTIMETER -> {
                 val values = PatternCreator.createFloat(15.0f, 25.0f, 0.1f)
-                SimulatedProvider(values, 100)
+                SimulatedProvider(values, delay)
             }
             ProviderType.TYPE_BAROMETER -> {
                 val values = PatternCreator.createFloat(1000f, 1021f, 1)
-                SimulatedProvider(values, 150)
+                SimulatedProvider(values, delay)
             }
             ProviderType.TYPE_COMPASS -> {
                 throw Exception("Unsupported sensor type for simulation.")
             }
             ProviderType.TYPE_HYGROMETER -> {
                 val values = PatternCreator.createFloat(50f, 70f, 1)
-                SimulatedProvider(values, 150)
+                SimulatedProvider(values, delay)
             }
             ProviderType.TYPE_LEVEL -> {
                 throw Exception("Unsupported sensor type for simulation.")
@@ -174,22 +182,22 @@ object ProviderFactory {
             }
             ProviderType.TYPE_MAGNETOMETER -> {
                 val values = PatternCreator.createFloat(20f, 70f, 1)
-                SimulatedProvider(values, 150L)
+                SimulatedProvider(values, delay)
             }
             ProviderType.TYPE_ORIENTATION -> {
                 throw Exception("Unsupported sensor type for simulation.")
             }
             ProviderType.TYPE_SOUND_LEVEL_METER -> {
                 val values = floatArrayOf(20f, 30f, 40f, 50f, 60f, 70f, 75f)
-                SimulatedProvider(values, 300)
+                SimulatedProvider(values, delay)
             }
             ProviderType.TYPE_SPEED_METER -> {
                 val values = floatArrayOf(20f, 30f, 40f, 50f, 60f, 70f, 75f)
-                SimulatedProvider(values, 300)
+                SimulatedProvider(values, delay)
             }
             ProviderType.TYPE_THERMOMETER -> {
                 val values = PatternCreator.createFloat(15.0f, 25.0f, 0.1f)
-                SimulatedProvider(values, 100)
+                SimulatedProvider(values, delay)
             }
             else -> throw Exception("Unknown sensor type $type.")
         }
@@ -202,7 +210,7 @@ object ProviderFactory {
         val hardwareProvider = createHardwareProvider(context, type, samplingRate)
         if (hardwareProvider.isSupported)
             return hardwareProvider
-        return createSimulatedProvider(type)
+        return createSimulatedProvider(type, samplingRate)
     }
 
     fun getFlow(context: Context, type: Int, samplingRate: Int): Flow<SensorData> = when (type) {
