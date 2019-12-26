@@ -17,15 +17,14 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.model.Chart;
+import com.ibashkimi.providerstools.R;
 import com.ibashkimi.providerstools.model.DisplayParams;
 import com.ibashkimi.providerstools.model.ProviderDisplay;
-import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.StyleUtils;
 
 import java.util.Random;
 
-public class ChartDisplay extends LineChart implements Chart, ProviderDisplay {
+public class ChartDisplay extends LineChart implements ProviderDisplay {
 
     @ColorInt
     private int mLineColor;
@@ -198,19 +197,10 @@ public class ChartDisplay extends LineChart implements Chart, ProviderDisplay {
 
     @Override
     public void setDisplayParams(@NonNull DisplayParams params) {
-        setMaxValue(params.getMaxValue());
-        setMinValue(params.getMinValue());
-    }
+        mMinimum = params.getMinValue();
+        mYAxis.setAxisMinimum(mMinimum);
 
-    @Override
-    public void setMinValue(float minValue) {
-        mMinimum = minValue;
-        mYAxis.setAxisMinimum(minValue);
-    }
-
-    @Override
-    public void setMaxValue(float maxValue) {
-        mMaximum = maxValue;
-        mYAxis.setAxisMaximum(maxValue);
+        mMaximum = params.getMaxValue();
+        mYAxis.setAxisMaximum(mMaximum);
     }
 }
