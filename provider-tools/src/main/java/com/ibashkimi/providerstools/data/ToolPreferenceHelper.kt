@@ -1,20 +1,18 @@
-package com.ibashkimi.providerstools.utils
+package com.ibashkimi.providerstools.data
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.ibashkimi.provider.factories.ProviderFactory
+import com.ibashkimi.provider.provider.ProviderType
 import com.ibashkimi.provider.providerdata.DataProcessor
 import com.ibashkimi.provider.providerdata.SensorData
 import com.ibashkimi.provider.unitconverter.celsiusToFahrenheit
 import com.ibashkimi.provider.unitconverter.celsiusToKelvin
 import com.ibashkimi.provider.unitconverter.hpaToAtm
 import com.ibashkimi.provider.unitconverter.hpaToTorr
-import com.ibashkimi.providerstools.model.DisplayParams
-import com.ibashkimi.providerstools.model.MeasureUnit
 import com.ibashkimi.providerstools.R
-import com.ibashkimi.providerstools.theme.Gauges
-import com.ibashkimi.providerstools.theme.Layouts
-import com.ibashkimi.providerstools.theme.Section
 import com.ibashkimi.shared.Tool
+import java.util.*
 
 class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: SharedPreferences) {
 
@@ -110,7 +108,12 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
         widgetPosition: String,
         defaultWidgetStyle: String = Gauges.STYLE_GAUGE_1
     ): Int {
-        return Gauges.style(sharedPreferences.getString(widgetPosition, defaultWidgetStyle)!!)
+        return getGaugeLayoutNormal(
+            sharedPreferences.getString(
+                widgetPosition,
+                defaultWidgetStyle
+            )!!
+        )
     }
 
     fun setWidget(widgetPosition: String, style: String) {
@@ -243,6 +246,23 @@ val Tool.title: Int
         else -> throw IllegalArgumentException("$name is not a provider tool")
     }
 
+fun Tool.isProviderSupported(context: Context): Boolean {
+    return ProviderFactory.createHardwareProvider(context, this.providerType, 3).isSupported
+}
+
+val Tool.providerType: Int
+    get() = when (this) {
+        Tool.ACCELEROMETER -> ProviderType.TYPE_ACCELEROMETER
+        Tool.BAROMETER -> ProviderType.TYPE_BAROMETER
+        Tool.COMPASS -> ProviderType.TYPE_COMPASS
+        Tool.HYGROMETER -> ProviderType.TYPE_HYGROMETER
+        Tool.LEVEL -> ProviderType.TYPE_LEVEL
+        Tool.LIGHT -> ProviderType.TYPE_LIGHT_METER
+        Tool.MAGNETOMETER -> ProviderType.TYPE_MAGNETOMETER
+        Tool.THERMOMETER -> ProviderType.TYPE_THERMOMETER
+        else -> throw IllegalArgumentException("$name is not a provider tool")
+    }
+
 val Tool.layoutMap: Map<String, Array<Section>>
     get() = when (this) {
         Tool.ACCELEROMETER -> basicLayouts
@@ -258,7 +278,11 @@ val Tool.layoutMap: Map<String, Array<Section>>
                 )
             )
             val section2 =
-                Section(Gauges.PREF_KEY_WIDGET_2, arrayOf(Gauges.STYLE_COMPASS_DIGITAL_1))
+                Section(
+                    Gauges.PREF_KEY_WIDGET_2, arrayOf(
+                        Gauges.STYLE_COMPASS_DIGITAL_1
+                    )
+                )
             mapOf(
                 Layouts.LAYOUT_SIMPLE to arrayOf(section1),
                 Layouts.LAYOUT_NORMAL to arrayOf(section1, section2)
@@ -266,8 +290,16 @@ val Tool.layoutMap: Map<String, Array<Section>>
         }
         Tool.HYGROMETER -> basicLayouts
         Tool.LEVEL -> {
-            val section1 = Section(Gauges.PREF_KEY_WIDGET_1, arrayOf(Gauges.STYLE_LEVEL_1))
-            val section2 = Section(Gauges.PREF_KEY_WIDGET_2, arrayOf(Gauges.STYLE_LEVEL_DIGITAL_1))
+            val section1 = Section(
+                Gauges.PREF_KEY_WIDGET_1, arrayOf(
+                    Gauges.STYLE_LEVEL_1
+                )
+            )
+            val section2 = Section(
+                Gauges.PREF_KEY_WIDGET_2, arrayOf(
+                    Gauges.STYLE_LEVEL_DIGITAL_1
+                )
+            )
             mapOf(
                 Layouts.LAYOUT_SIMPLE to arrayOf(section1),
                 Layouts.LAYOUT_NORMAL to arrayOf(section1, section2)
@@ -290,9 +322,17 @@ private val basicLayouts: Map<String, Array<Section>> by lazy {
         )
     )
     val s2 =
-        Section(Gauges.PREF_KEY_WIDGET_2, arrayOf(Gauges.STYLE_DIGITAL_1, Gauges.STYLE_CHART_2))
+        Section(
+            Gauges.PREF_KEY_WIDGET_2, arrayOf(
+                Gauges.STYLE_DIGITAL_1, Gauges.STYLE_CHART_2
+            )
+        )
     val s3 =
-        Section(Gauges.PREF_KEY_WIDGET_3, arrayOf(Gauges.STYLE_DIGITAL_1, Gauges.STYLE_CHART_2))
+        Section(
+            Gauges.PREF_KEY_WIDGET_3, arrayOf(
+                Gauges.STYLE_DIGITAL_1, Gauges.STYLE_CHART_2
+            )
+        )
     mapOf(
         Layouts.LAYOUT_SIMPLE to arrayOf(s1),
         Layouts.LAYOUT_NORMAL to arrayOf(s1, s2),
@@ -312,6 +352,9 @@ val Tool.defaultUnit: MeasureUnit
         Tool.THERMOMETER -> MeasureUnit.CELSIUS
         else -> throw IllegalArgumentException("$name is not a provider tool")
     }
+
+fun Tool.preferences(context: Context): SharedPreferences =
+    context.getSharedPreferences(name.toLowerCase(Locale.ENGLISH), Context.MODE_PRIVATE)
 
 val Tool.allSupportedUnits: List<MeasureUnit>
     get() = when (this) {
@@ -383,8 +426,11 @@ val MeasureUnit.dataProcessor: DataProcessor?
     }
 
 fun Tool.getSharedPreferences(context: Context): SharedPreferences =
-    PreferencesResolver.resolvePreferences(context, this)
+    this.preferences(context)
 
-fun Tool.helper(context: Context): ToolPreferenceHelper {
-    return ToolPreferenceHelper(this, getSharedPreferences(context))
-}
+fun Tool.helper(context: Context) =
+    ToolPreferenceHelper(
+        this,
+        getSharedPreferences(context)
+    )
+

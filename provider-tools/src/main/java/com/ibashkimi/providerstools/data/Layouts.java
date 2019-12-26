@@ -1,4 +1,4 @@
-package com.ibashkimi.providerstools.theme;
+package com.ibashkimi.providerstools.data;
 
 public class Layouts {
 
@@ -11,4 +11,5 @@ public class Layouts {
 
     private Layouts() {
     }
+
 }

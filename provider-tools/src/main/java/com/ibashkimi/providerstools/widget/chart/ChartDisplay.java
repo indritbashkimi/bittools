@@ -18,8 +18,8 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.ibashkimi.provider.providerdata.SensorData;
 import com.ibashkimi.providerstools.R;
-import com.ibashkimi.providerstools.model.DisplayParams;
-import com.ibashkimi.providerstools.model.ProviderDisplay;
+import com.ibashkimi.providerstools.data.DisplayParams;
+import com.ibashkimi.providerstools.data.ProviderDisplay;
 import com.ibashkimi.theme.utils.StyleUtils;
 
 import java.util.Random;

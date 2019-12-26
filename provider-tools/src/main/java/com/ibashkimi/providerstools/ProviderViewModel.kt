@@ -9,10 +9,10 @@ import androidx.lifecycle.Transformations
 import com.ibashkimi.provider.factories.ProviderFactory
 import com.ibashkimi.provider.livedata.SensorLiveData
 import com.ibashkimi.provider.providerdata.SensorData
-import com.ibashkimi.providerstools.model.MeasureUnit
-import com.ibashkimi.providerstools.utils.dataProcessor
-import com.ibashkimi.providerstools.utils.helper
-import com.ibashkimi.providerstools.utils.providerType
+import com.ibashkimi.providerstools.data.MeasureUnit
+import com.ibashkimi.providerstools.data.dataProcessor
+import com.ibashkimi.providerstools.data.helper
+import com.ibashkimi.providerstools.data.providerType
 import com.ibashkimi.shared.Tool
 
 class ProviderViewModel(app: Application) : AndroidViewModel(app) {

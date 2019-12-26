@@ -16,8 +16,8 @@ import androidx.annotation.Nullable;
 
 import com.ibashkimi.provider.providerdata.OrientationData;
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.model.DisplayParams;
-import com.ibashkimi.providerstools.model.ProviderDisplay;
+import com.ibashkimi.providerstools.data.DisplayParams;
+import com.ibashkimi.providerstools.data.ProviderDisplay;
 import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.StyleUtils;
 

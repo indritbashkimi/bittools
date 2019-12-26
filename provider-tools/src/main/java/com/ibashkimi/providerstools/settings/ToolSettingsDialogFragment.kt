@@ -10,8 +10,8 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.navigation.NavigationView
 import com.ibashkimi.providerstools.R
-import com.ibashkimi.providerstools.utils.allSupportedUnits
-import com.ibashkimi.providerstools.utils.helper
+import com.ibashkimi.providerstools.data.allSupportedUnits
+import com.ibashkimi.providerstools.data.helper
 
 class ToolSettingsDialogFragment : BottomSheetDialogFragment() {
 

@@ -1,4 +1,4 @@
-package com.ibashkimi.providerstools.model
+package com.ibashkimi.providerstools.data
 
 data class DisplayParams(
     var minValue: Int = 0,

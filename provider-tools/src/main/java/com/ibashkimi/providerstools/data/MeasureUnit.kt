@@ -1,4 +1,4 @@
-package com.ibashkimi.providerstools.model
+package com.ibashkimi.providerstools.data
 
 import androidx.annotation.StringRes
 import com.ibashkimi.providerstools.R

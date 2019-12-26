@@ -1,4 +1,4 @@
-package com.ibashkimi.providerstools.theme
+package com.ibashkimi.providerstools.settings
 
 import android.content.Context
 import android.graphics.Color
@@ -9,28 +9,25 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.ibashkimi.providerstools.R
+import com.ibashkimi.providerstools.data.WidgetItem
 import com.ibashkimi.theme.utils.StyleUtils
 import kotlin.math.roundToInt
 
 
-class Adapter(
+class WidgetAdapter(
     private val context: Context,
     private val items: List<WidgetItem>,
-    private var selectedItem: Int,
+    var selectedItem: Int,
     width: Int, height: Int
-) : RecyclerView.Adapter<Adapter.ThemeViewHolder>() {
+) : RecyclerView.Adapter<WidgetAdapter.ThemeViewHolder>() {
+
+    var listener: WidgetAdapterListener? = null
 
     private var selectedHolder: ThemeViewHolder? = null
 
     private val width: Int
 
     private val height: Int
-
-    var listener: ThemeAdapterListener? = null
-
-    interface ThemeAdapterListener {
-        fun onThemeItemSelected(item: WidgetItem, save: Boolean)
-    }
 
     private val unselectedColor: Int
     private val selectedColor: Int
@@ -101,7 +98,8 @@ class Adapter(
             selectedHolder = holder
             selectedHolder!!.isSelected = true
             selectedItem = position
-            listener?.onThemeItemSelected(item, true)
+            notifyDataSetChanged()
+            listener?.onWidgetSelected(item)
         }
     }
 

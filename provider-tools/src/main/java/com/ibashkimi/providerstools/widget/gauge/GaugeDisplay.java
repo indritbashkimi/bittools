@@ -6,8 +6,8 @@ import android.util.AttributeSet;
 import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.SensorData;
-import com.ibashkimi.providerstools.model.DisplayParams;
-import com.ibashkimi.providerstools.model.ProviderDisplay;
+import com.ibashkimi.providerstools.data.DisplayParams;
+import com.ibashkimi.providerstools.data.ProviderDisplay;
 
 import java.text.DecimalFormat;
 

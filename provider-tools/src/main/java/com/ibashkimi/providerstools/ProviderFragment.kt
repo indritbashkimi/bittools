@@ -13,13 +13,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ibashkimi.provider.providerdata.SensorData
-import com.ibashkimi.providerstools.model.ProviderDisplay
-import com.ibashkimi.providerstools.theme.Gauges
-import com.ibashkimi.providerstools.theme.Layouts
-import com.ibashkimi.providerstools.utils.ToolPreferenceHelper
-import com.ibashkimi.providerstools.utils.allSupportedUnits
-import com.ibashkimi.providerstools.utils.helper
-import com.ibashkimi.providerstools.utils.title
+import com.ibashkimi.providerstools.data.ProviderDisplay
+import com.ibashkimi.providerstools.data.Gauges
+import com.ibashkimi.providerstools.data.Layouts
+import com.ibashkimi.providerstools.data.ToolPreferenceHelper
+import com.ibashkimi.providerstools.data.allSupportedUnits
+import com.ibashkimi.providerstools.data.helper
+import com.ibashkimi.providerstools.data.title
 
 class ProviderFragment : Fragment() {
 
@@ -39,8 +39,6 @@ class ProviderFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         preferenceHelper = args.tool.helper(requireContext())
-
-
     }
 
     override fun onCreateView(
