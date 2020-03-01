@@ -1,26 +1,30 @@
 package com.ibashkimi.theme.preference
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.ShapeDrawable
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ibashkimi.theme.R
 import com.ibashkimi.theme.theme.Theme
+import kotlin.math.roundToInt
 
 
 @Suppress("unused")
 class ThemeAdapter(
+    val context: Context,
     var themes: List<DecodedTheme>,
     var selectedIndex: Int,
     private val isThemePremium: (Theme) -> Boolean,
     private val listener: ThemeSelectedListener?
 ) : RecyclerView.Adapter<ThemeViewHolder>() {
 
-    private var selectedHolder: ThemeViewHolder? = null
+    private val selectedStrokeWidth: Int = 4.toPx()
 
     interface ThemeSelectedListener {
         fun onThemeSelected(theme: Theme)
@@ -46,20 +50,23 @@ class ThemeAdapter(
             is GradientDrawable -> background.setColor(theme.colorSecondary)
             is ColorDrawable -> background.color = theme.colorSecondary
         }
-        //holder.secondary.setBackgroundColor(colorAccent);
-        holder.border.visibility = View.INVISIBLE
-        if (position == selectedIndex) {
-            holder.border.visibility = View.VISIBLE
-            selectedHolder = holder
-        }
+        holder.card.strokeWidth = if (position == selectedIndex) selectedStrokeWidth else 0
         if (listener != null) {
             holder.rootView.setOnClickListener {
                 listener.onThemeSelected(theme.theme)
+                notifyItemChanged(selectedIndex)
+                selectedIndex = position
+                notifyItemChanged(selectedIndex)
             }
         }
     }
 
     override fun getItemCount(): Int {
         return themes.size
+    }
+
+    private fun Int.toPx(): Int {
+        val displayMetrics = context.resources.displayMetrics
+        return (this * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt()
     }
 }

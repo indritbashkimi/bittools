@@ -41,7 +41,7 @@ class ThemeFragment : Fragment(), ThemeAdapter.ThemeSelectedListener {
                 context,
                 resources.getInteger(com.ibashkimi.theme.R.integer.theme_columns)
             )
-            themeAdapter = ThemeAdapter(emptyList(), -1, { false }, this@ThemeFragment)
+            themeAdapter = ThemeAdapter(context, emptyList(), -1, { false }, this@ThemeFragment)
             adapter = themeAdapter
         }
         viewModel.themes(root.context).observe(viewLifecycleOwner, Observer {

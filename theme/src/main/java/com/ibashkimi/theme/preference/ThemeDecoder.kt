@@ -15,32 +15,25 @@ fun decodeTheme(context: Context, theme: Theme): DecodedTheme {
             R.attr.colorPrimaryDark,
             R.attr.colorSecondary,
             android.R.attr.colorBackground,
-            R.attr.appBarStyle
+            R.attr.colorSurface
         )
     )
     @ColorInt val colorPrimary = a.getColor(0, Color.TRANSPARENT)
     @ColorInt val colorPrimaryDark = a.getColor(1, Color.TRANSPARENT)
     @ColorInt val colorSecondary = a.getColor(2, Color.TRANSPARENT)
     @ColorInt val colorBackground = a.getColor(3, Color.TRANSPARENT)
+    @ColorInt val colorSurface = a.getColor(4, colorBackground)
 
-    val appBarStyle = a.getResourceId(4, -1)
+    val appBarBackground = if (theme == Theme.BLACK_WHITE_TEAL) colorSurface else colorPrimary
+
     a.recycle()
-
-    val toolbarBackground: Int
-    if (appBarStyle != -1) {
-        val b = context.obtainStyledAttributes(appBarStyle, intArrayOf(android.R.attr.background))
-        toolbarBackground = b.getColor(0, colorPrimary)
-        b.recycle()
-    } else {
-        toolbarBackground = colorPrimary
-    }
 
     return DecodedTheme(
         theme,
         colorPrimary,
         colorPrimaryDark,
         colorSecondary,
-        toolbarBackground,
+        appBarBackground,
         colorBackground
     )
 }
