@@ -8,14 +8,12 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ibashkimi.bittools.R
 import com.ibashkimi.theme.preference.ThemeAdapter
 import com.ibashkimi.theme.theme.Theme
-import kotlinx.coroutines.launch
 
 class ThemeFragment : Fragment(), ThemeAdapter.ThemeSelectedListener {
 

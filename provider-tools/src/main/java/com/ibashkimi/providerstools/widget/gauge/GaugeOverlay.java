@@ -132,7 +132,7 @@ class GaugeOverlay extends View {
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setStrokeWidth(mStrokeWidth);
         mPaint.setTextAlign(Paint.Align.CENTER);
-        mPaint.setTextSize(mTextSize);//context.getResources().getInteger(R.integer.gauge_unit_text_size));
+        mPaint.setTextSize(mTextSize);
         mPaint.setColor(mCircleColor);
 
         calculateRadius();

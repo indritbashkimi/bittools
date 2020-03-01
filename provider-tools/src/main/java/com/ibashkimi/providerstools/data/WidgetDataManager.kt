@@ -35,9 +35,6 @@ class WidgetDataManager(val tool: Tool) {
             Layouts.LAYOUT_SIMPLE -> R.layout.theme_item_layout_simple
             Layouts.LAYOUT_NORMAL -> R.layout.theme_item_layout_normal
             Layouts.LAYOUT_RICH -> R.layout.theme_item_layout_rich
-            Layouts.LAYOUT_PAGER_TABS -> R.layout.theme_item_layout_pager
-            Layouts.LAYOUT_PAGER -> R.layout.theme_item_layout_pager
-            Layouts.LAYOUT_BOTTOM_SHEET -> R.layout.theme_item_layout_bottom_sheet
             else -> throw IllegalArgumentException()
         }
     }

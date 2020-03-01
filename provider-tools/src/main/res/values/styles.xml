@@ -1,58 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="AppTheme.DayNight" parent="BaseTheme">
-        <item name="valueTextColor">?colorOnPrimary</item>
-        <item name="arrowColor">?colorPrimary</item>
-        <item name="boardTextColor">@color/gauge_board</item>
-        <item name="gaugeStrokeColor">@color/ib_textColorDisabled</item>
-    </style>
-
-    <style name="AppTheme.DayNight.DarkText">
-        <item name="appBarStyle">@style/ThemeOverlay.AppCompat.Light</item>
-        <item name="toolbarStyle">@style/Widget.AppTheme.Toolbar.Light</item>
-        <item name="valueTextColor">?colorOnPrimary</item>
-        <item name="gaugeStrokeColor">@color/ib_textColorDisabled</item>
-    </style>
-
     <style name="Widget.AppTheme.Gauge" parent="AppTheme.DayNight">
         <item name="valueTextColor">?colorOnPrimary</item>
-        <item name="boardTextColor">@color/gauge_board</item>
+        <item name="boardTextColor">?colorOnBackground</item>
     </style>
 
-    <style name="AppTheme.DayNight.Material" parent="AppTheme.DayNight">
-        <item name="gaugeCircleColor">?colorSecondary</item>
-        <item name="valueTextColor">?android:attr/textColorPrimaryInverse</item>
-        <item name="arrowColor">?colorAccent</item>
-    </style>
-
-    <style name="AppTheme.Full" parent="AppTheme.Extra">
-        <item name="valueTextColor">?colorOnPrimary</item>
-        <item name="arrowColor">?colorPrimary</item>
-        <item name="boardTextColor">?android:textColorSecondary</item>
-        <item name="gaugeCircleColor">?colorPrimary</item>
-        <item name="compassExternalCircleColor">?colorSecondary</item>
-        <item name="gaugeStrokeColor">?colorSecondary</item>
-    </style>
-
-    <style name="AppTheme.Full.DarkText" parent="AppTheme.Extra.LightPrimaryColor">
-        <item name="valueTextColor">?colorOnPrimary</item>
-        <item name="arrowColor">?colorPrimary</item>
-        <item name="boardTextColor">?android:textColorSecondary</item>
-        <item name="gaugeCircleColor">?colorPrimary</item>
-        <item name="compassExternalCircleColor">?colorAccent</item>
-        <item name="gaugeStrokeColor">?colorPrimary</item>
-    </style>
-
-    <style name="MyPreferenceCategory2">
-        <item name="android:gravity">start</item>
-        <item name="android:layout_marginBottom">16dp</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:paddingStart">16dp</item>
-        <item name="android:paddingEnd">?android:attr/listPreferredItemPaddingEnd</item>
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:textAppearance">?textAppearanceBody2</item>
-        <item name="android:textColor">?attr/colorAccent</item>
-        <item name="android:textStyle">normal</item>
-    </style>
 </resources>

@@ -57,7 +57,6 @@ class ProviderSettingsFragment : Fragment() {
         recyclerView.adapter = adapter
 
         viewModel.layoutLiveData.observe(viewLifecycleOwner, Observer {
-            android.util.Log.d("ProviderSettingsFragmen", "layoutLiveData")
             childFragmentManager.beginTransaction()
                 .replace(
                     R.id.sections_container,
