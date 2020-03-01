@@ -11,8 +11,8 @@ android {
         applicationId "com.ibashkimi.bittools"
         minSdkVersion versions.android.minSdk
         targetSdkVersion versions.android.targetSdk
-        versionCode 20
-        versionName '1.4.1'
+        versionCode 21
+        versionName '1.5.0'
         resConfigs "en", "it", "sq"
     }
     buildTypes {
