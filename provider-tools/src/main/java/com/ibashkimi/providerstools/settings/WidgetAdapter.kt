@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 import com.ibashkimi.providerstools.R
 import com.ibashkimi.providerstools.data.WidgetItem
 import com.ibashkimi.theme.utils.StyleUtils
@@ -29,14 +30,16 @@ class WidgetAdapter(
 
     private val height: Int
 
-    private val unselectedColor: Int
     private val selectedColor: Int
 
+    private val selectedStrokeWidth: Int
+
     init {
-        this.width = dpToPx(width)
-        this.height = dpToPx(height)
-        this.unselectedColor = R.color.card_background_color
-        this.selectedColor = StyleUtils.obtainColor(context, R.attr.colorAccent, Color.RED)
+        this.width = width.toPx()
+        this.height = height.toPx()
+        val accentColor = StyleUtils.obtainColor(context, R.attr.colorAccent, Color.RED)
+        this.selectedColor = accentColor
+        this.selectedStrokeWidth = 4.toPx()
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -60,32 +63,13 @@ class WidgetAdapter(
             FrameLayout.LayoutParams.MATCH_PARENT,
             FrameLayout.LayoutParams.MATCH_PARENT
         )
-        val margin = dpToPx(2)
-        params.setMargins(margin, margin, margin, margin)
-
-        val border =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_theme_border, parent, false)
-        val borderParams = FrameLayout.LayoutParams(
-            FrameLayout.LayoutParams.MATCH_PARENT,
-            FrameLayout.LayoutParams.MATCH_PARENT
-        )
-        val borderMargin = dpToPx(0)
-        borderParams.setMargins(borderMargin, borderMargin, borderMargin, borderMargin)
-        border.background = context.getDrawable(R.drawable.theme_item_border_unselected)
 
         rootView.addView(itemView, params)
-        rootView.addView(border, borderParams)
 
         return ThemeViewHolder(rootView)
     }
 
-    private fun dpToPx(dp: Int): Int {
-        val displayMetrics = context.resources.displayMetrics
-        return (dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt()
-    }
-
     override fun onBindViewHolder(holder: ThemeViewHolder, position: Int) {
-        //holder.id = items[position].id
         val item = items[position]
         if (position == selectedItem) {
             holder.isSelected = true
@@ -111,8 +95,13 @@ class WidgetAdapter(
         return selectedHolder?.id
     }
 
+    private fun Int.toPx(): Int {
+        val displayMetrics = context.resources.displayMetrics
+        return (this * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt()
+    }
+
     inner class ThemeViewHolder(root: View) : RecyclerView.ViewHolder(root) {
-        private val border: View = itemView.findViewById(R.id.border_view)
+        private val card = itemView.findViewById<MaterialCardView>(R.id.card_view)
         var id: String? = null
 
         private var _isSelected = false
@@ -121,11 +110,7 @@ class WidgetAdapter(
             get() = _isSelected
             set(value) {
                 _isSelected = value
-                if (value) {
-                    border.background = context.getDrawable(R.drawable.theme_item_border_selected)
-                } else {
-                    border.background = context.getDrawable(R.drawable.theme_item_border_unselected)
-                }
+                card.strokeWidth = if (value) selectedStrokeWidth else 0
             }
     }
 }
