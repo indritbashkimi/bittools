@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
+import android.widget.LinearLayout
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -15,13 +16,7 @@ import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ibashkimi.provider.providerdata.SensorData
-import com.ibashkimi.providerstools.data.ProviderDisplay
-import com.ibashkimi.providerstools.data.Gauges
-import com.ibashkimi.providerstools.data.Layouts
-import com.ibashkimi.providerstools.data.ToolPreferenceHelper
-import com.ibashkimi.providerstools.data.allSupportedUnits
-import com.ibashkimi.providerstools.data.helper
-import com.ibashkimi.providerstools.data.title
+import com.ibashkimi.providerstools.data.*
 
 class ProviderFragment : Fragment() {
 
@@ -30,10 +25,6 @@ class ProviderFragment : Fragment() {
     private val viewModel: ProviderViewModel by viewModels()
 
     private lateinit var preferenceHelper: ToolPreferenceHelper
-
-    private lateinit var displayMap: Map<String, Int>
-
-    private var layout = -1
 
     private val displays = ArrayList<ProviderDisplay>(3)
 
@@ -48,11 +39,17 @@ class ProviderFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setupLayout()
-        val rootView = inflater.inflate(this.layout, container, false)
+        val layoutType = preferenceHelper.layout
+        val layoutRes = when (layoutType) {
+            Layouts.LAYOUT_SIMPLE -> R.layout.fragment_simple
+            Layouts.LAYOUT_NORMAL -> R.layout.fragment_normal_layout
+            Layouts.LAYOUT_RICH -> R.layout.fragment_rich_layout
+            else -> throw IllegalArgumentException("Unknown layout $layoutType.")
+        }
+        val rootView = inflater.inflate(layoutRes, container, false)
         setUpToolbar(rootView)
+        displays.addAll(setUpLayout(rootView, layoutType))
         setUpFab(rootView)
-        setUpDisplays(rootView)
 
         return rootView
     }
@@ -61,41 +58,89 @@ class ProviderFragment : Fragment() {
         viewModel.measurementUnit.observe(viewLifecycleOwner, Observer {
             setUpDisplayParams()
         })
-
         viewModel.setTool(args.tool, preferenceHelper.measurementUnit)
-
         viewModel.sensorData.observe(viewLifecycleOwner, Observer {
             onDataChanged(it)
         })
     }
 
-    private fun setupLayout() {
-        when (val layout = preferenceHelper.layout) {
-            Layouts.LAYOUT_SIMPLE -> {
-                this.layout = R.layout.fragment_simple
-                this.displayMap = mapOf(Gauges.PREF_KEY_WIDGET_1 to R.id.container_1)
-            }
-            Layouts.LAYOUT_NORMAL -> {
-                this.layout = R.layout.fragment_normal_layout
-                this.displayMap = mapOf(
-                    Gauges.PREF_KEY_WIDGET_1 to R.id.container_1,
-                    Gauges.PREF_KEY_WIDGET_2 to R.id.container_2
-                )
-            }
-            Layouts.LAYOUT_RICH -> {
-                this.layout = R.layout.fragment_rich_layout
-                this.displayMap = mapOf(
-                    Gauges.PREF_KEY_WIDGET_1 to R.id.container_1,
-                    Gauges.PREF_KEY_WIDGET_2 to R.id.container_2,
-                    Gauges.PREF_KEY_WIDGET_3 to R.id.container_3
-                )
-            }
-            else -> throw IllegalArgumentException("Unknown layout $layout.")
-        }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        displays.clear()
     }
 
-    private fun onDataChanged(data: SensorData) {
-        displays.forEach { it.onDataChanged(data) }
+    private fun setUpLayout(rootView: View, layoutType: String): List<ProviderDisplay> {
+        return when (layoutType) {
+            Layouts.LAYOUT_SIMPLE -> {
+                val display1Container = rootView.findViewById<View>(R.id.container_1) as ViewGroup
+                val display1Layout = preferenceHelper.getWidgetLayout(Gauges.PREF_KEY_WIDGET_1)
+                val display1 = LayoutInflater.from(requireContext())
+                    .inflate(display1Layout, display1Container, false)
+                display1Container.addView(display1)
+                listOf(display1 as ProviderDisplay)
+            }
+            Layouts.LAYOUT_NORMAL -> {
+                val display1Container = rootView.findViewById<View>(R.id.container_1) as ViewGroup
+                val display1Layout = preferenceHelper.getWidgetLayout(Gauges.PREF_KEY_WIDGET_1)
+                val display1 = LayoutInflater.from(requireContext())
+                    .inflate(display1Layout, display1Container, false)
+                display1Container.addView(display1)
+
+                val appbar = rootView.findViewById<AppBarLayout>(R.id.appbar)
+                val display2 = LayoutInflater.from(appbar.context)
+                    .inflate(
+                        preferenceHelper.getWidgetLayout(Gauges.PREF_KEY_WIDGET_2),
+                        appbar,
+                        false
+                    )
+                appbar.addView(display2)
+
+                listOf(display1 as ProviderDisplay, display2 as ProviderDisplay)
+            }
+            Layouts.LAYOUT_RICH -> {
+                val display1Container = rootView.findViewById<View>(R.id.container_1) as ViewGroup
+                val display1Layout = preferenceHelper.getWidgetLayout(Gauges.PREF_KEY_WIDGET_1)
+                val display1 = LayoutInflater.from(requireContext())
+                    .inflate(display1Layout, display1Container, false)
+                display1Container.addView(display1)
+
+                val appbar = rootView.findViewById<AppBarLayout>(R.id.appbar)
+                val appBarDisplayLayout = LinearLayout(appbar.context)
+                appBarDisplayLayout.orientation = LinearLayout.HORIZONTAL
+                val display2 = LayoutInflater.from(appBarDisplayLayout.context).inflate(
+                    preferenceHelper.getWidgetLayout(Gauges.PREF_KEY_WIDGET_2),
+                    appBarDisplayLayout,
+                    false
+                )
+                val display3 = LayoutInflater.from(appbar.context).inflate(
+                    preferenceHelper.getWidgetLayout(Gauges.PREF_KEY_WIDGET_3),
+                    appBarDisplayLayout,
+                    false
+                )
+                display2.updateLayoutParams<LinearLayout.LayoutParams> {
+                    width = 0
+                    weight = 0.5f
+                }
+                display3.updateLayoutParams<LinearLayout.LayoutParams> {
+                    width = 0
+                    weight = 0.5f
+                }
+                appBarDisplayLayout.addView(display2)
+                appBarDisplayLayout.addView(display3)
+                appbar.addView(appBarDisplayLayout)
+                appBarDisplayLayout.updateLayoutParams<LinearLayout.LayoutParams> {
+                    width = LinearLayout.LayoutParams.MATCH_PARENT
+                    height = LinearLayout.LayoutParams.WRAP_CONTENT
+                }
+
+                listOf(
+                    display1 as ProviderDisplay,
+                    display2 as ProviderDisplay,
+                    display3 as ProviderDisplay
+                )
+            }
+            else -> throw IllegalArgumentException("Unknown layout $layoutType.")
+        }
     }
 
     private fun setUpToolbar(rootView: View) {
@@ -143,16 +188,8 @@ class ProviderFragment : Fragment() {
         }
     }
 
-    private fun setUpDisplays(rootView: View) {
-        displays.clear()
-        for ((widgetPosition, widgetContainer) in displayMap) {
-            val layoutRes = preferenceHelper.getWidgetLayout(widgetPosition)
-            val container = rootView.findViewById<View>(widgetContainer) as ViewGroup
-            val root = LayoutInflater.from(container.context)
-                .inflate(layoutRes, container, true)
-            val display = root.findViewById<View>(R.id.display) as ProviderDisplay
-            displays.add(display)
-        }
+    private fun onDataChanged(data: SensorData) {
+        displays.forEach { it.onDataChanged(data) }
     }
 
     private fun setUpDisplayParams() {
