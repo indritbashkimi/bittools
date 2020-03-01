@@ -11,6 +11,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ibashkimi.provider.providerdata.SensorData
 import com.ibashkimi.providerstools.data.ProviderDisplay
@@ -164,7 +166,7 @@ class ProviderFragment : Fragment() {
         val items: Array<CharSequence> = args.tool.allSupportedUnits.map { measureUnit ->
             getString(measureUnit.title)
         }.toTypedArray()
-        AlertDialog.Builder(requireContext())
+        MaterialAlertDialogBuilder(requireContext())
             .setTitle(R.string.change_unit_title)
             .setSingleChoiceItems(items, supportedUnits.indexOf(unit)) { dialog, pos ->
                 preferenceHelper.measurementUnit = supportedUnits[pos]
@@ -174,11 +176,11 @@ class ProviderFragment : Fragment() {
             .setNegativeButton(android.R.string.cancel) { dialog, _ ->
                 dialog.dismiss()
             }
-            .create().show()
+            .show()
     }
 
     private fun showSamplingRateOptions() {
-        AlertDialog.Builder(requireContext())
+        MaterialAlertDialogBuilder(requireContext())
             .setTitle(R.string.settings_sampling_rate_title)
             .setSingleChoiceItems(
                 R.array.preferences_sensor_rate_human_value,
@@ -191,6 +193,6 @@ class ProviderFragment : Fragment() {
             .setNegativeButton(android.R.string.cancel) { dialog, _ ->
                 dialog.dismiss()
             }
-            .create().show()
+            .show()
     }
 }
