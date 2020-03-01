@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.SensorData;
+import com.ibashkimi.providerstools.R;
 import com.ibashkimi.providerstools.data.DisplayParams;
 import com.ibashkimi.providerstools.data.ProviderDisplay;
 
@@ -22,7 +23,7 @@ public class GaugeDisplay extends Gauge implements ProviderDisplay {
     }
 
     public GaugeDisplay(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
+        this(context, attrs, defStyleAttr, R.style.Widget_AppTheme_Gauge);
     }
 
     public GaugeDisplay(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {

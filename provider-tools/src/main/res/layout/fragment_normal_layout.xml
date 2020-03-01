@@ -13,15 +13,15 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            style="?attr/toolbarStyle"
+            style="?toolbarStyle"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
 
         <FrameLayout
             android:id="@+id/container_2"
-            android:background="?colorPrimary"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:elevation="4dp" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

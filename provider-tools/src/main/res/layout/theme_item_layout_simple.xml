@@ -10,7 +10,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="24dp"
-        android:background="?colorPrimary" />
+        style="?appBarLayoutStyle" />
 
     <TextView
         android:layout_width="match_parent"
@@ -19,6 +19,6 @@
         android:background="?android:colorBackground"
         android:gravity="center"
         android:text="@string/section_n_1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="?textAppearanceBody1" />
 
 </LinearLayout>

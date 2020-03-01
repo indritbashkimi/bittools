@@ -13,7 +13,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            style="?attr/toolbarStyle"
+            style="?toolbarStyle"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
 
@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:baselineAligned="false"
             android:gravity="center"
-            android:background="?colorPrimary"
             android:orientation="horizontal">
 
             <FrameLayout

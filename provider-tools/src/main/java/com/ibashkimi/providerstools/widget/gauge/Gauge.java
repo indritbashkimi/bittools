@@ -22,7 +22,7 @@ public class Gauge extends FrameLayout {
     }
 
     public Gauge(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr, 0);
+        super(context, attrs, defStyleAttr, R.style.Widget_AppTheme_Gauge);
     }
 
     public Gauge(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {

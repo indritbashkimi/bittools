@@ -10,8 +10,6 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 
-import androidx.core.content.ContextCompat;
-
 import com.ibashkimi.ruler.R;
 import com.ibashkimi.theme.utils.MathUtils;
 import com.ibashkimi.theme.utils.StyleUtils;
@@ -48,7 +46,7 @@ public class ProtractorPlumbOverlay extends View {
         DisplayMetrics metrics = getResources().getDisplayMetrics();
         mPaint.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 36, metrics));
         mPaint.setAntiAlias(true);
-        mPaint.setColor(ContextCompat.getColor(context, R.color.text_light_background));
+        mPaint.setColor(StyleUtils.obtainColor(context, android.R.attr.textColorSecondary, Color.RED));
         mPaint.setTextAlign(Paint.Align.CENTER);
 
         mPlumbPaint = new Paint();

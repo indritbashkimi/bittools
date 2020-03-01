@@ -15,29 +15,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:paddingTop="16dp"
+                android:paddingStart="?listPreferredItemPaddingStart"
+                android:paddingEnd="?listPreferredItemPaddingEnd"
+                android:text="@string/pref_layout_title"
+                android:textAppearance="?textAppearanceSubtitle2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/layout_recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:scrollbars="horizontal" />
 
-                <TextView
-                    style="@style/MyPreferenceCategory2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/pref_layout_title" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/layout_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="4dp"
-                    android:scrollbars="horizontal" />
-
-            </LinearLayout>
-
-            <FrameLayout
+            <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/sections_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

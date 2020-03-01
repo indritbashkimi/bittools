@@ -77,7 +77,7 @@ class GaugeOverlay extends View {
     }
 
     public GaugeOverlay(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
+        this(context, attrs, defStyleAttr, R.style.Widget_AppTheme_Gauge);
     }
 
     public GaugeOverlay(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -154,9 +154,10 @@ class GaugeOverlay extends View {
 
         mValueText = "";
 
-        mMinArrowColor = Color.parseColor("#737373"); // TODO: 11/04/18  
-        mMaxArrowColor = Color.parseColor("#737373");
-        mAvgArrowColor = Color.parseColor("#737373");
+        int textColorSecondary = StyleUtils.obtainColor(context, android.R.attr.textColorSecondary, Color.RED);
+        mMinArrowColor = textColorSecondary;
+        mMaxArrowColor = textColorSecondary;
+        mAvgArrowColor = textColorSecondary;
 
         mMinValue = mGaugeMinValue;
         mMaxValue = mGaugeMaxValue;

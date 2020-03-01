@@ -47,7 +47,7 @@ class WidgetsFragment : Fragment() {
             val selectedDisplayPosition =
                 displayItems.indices.firstOrNull { displayItems[it].id == selectedDisplay } ?: 0
             val adapter =
-                WidgetAdapter(recyclerView.context, displayItems, selectedDisplayPosition, 160, 160)
+                WidgetAdapter(recyclerView.context, displayItems, selectedDisplayPosition, 140, 140)
             recyclerView.layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             recyclerView.adapter = adapter

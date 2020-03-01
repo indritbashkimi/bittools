@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:gravity="center"
@@ -13,8 +13,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:gravity="center_horizontal|bottom"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        tools:text="80" />
+        android:textAppearance="?textAppearanceHeadline3"
+        android:textColor="?android:attr/textColorPrimary"
+        android:text="80" />
 
     <TextView
         android:id="@+id/unit"
@@ -23,6 +24,8 @@
         android:layout_gravity="bottom"
         android:gravity="start|bottom"
         android:paddingBottom="8dp"
-        tools:text="db" />
+        android:textAppearance="?textAppearanceSubtitle2"
+        android:textColor="?colorControlNormal"
+        android:text="db" />
 
 </LinearLayout>

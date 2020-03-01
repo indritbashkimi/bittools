@@ -2,8 +2,11 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sectionTitle"
-    style="@style/MyPreferenceCategory2"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="start"
+    android:paddingStart="?listPreferredItemPaddingStart"
+    android:paddingTop="16dp"
+    android:paddingEnd="?listPreferredItemPaddingEnd"
+    android:textAppearance="?textAppearanceSubtitle2"
     tools:text="Section" />

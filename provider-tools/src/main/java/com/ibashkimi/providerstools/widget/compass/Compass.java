@@ -44,7 +44,7 @@ public class Compass extends FrameLayout implements ProviderDisplay {
         setWillNotDraw(false);
 
         int valueTextSize = 24;
-        int valueTextColor = StyleUtils.obtainColor(context, android.R.attr.textColorPrimary, Color.RED);
+        int valueTextColor = StyleUtils.obtainColor(context, R.attr.colorOnPrimary, Color.RED);
         int valueCircleColor = StyleUtils.obtainColor(context, R.attr.colorPrimary, Color.RED);
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,
