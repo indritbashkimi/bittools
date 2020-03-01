@@ -8,7 +8,6 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
-    android:theme="?attr/appBarStyle"
     app:digitalTitle="Pressure"
     app:showDefaultValue="true"
     app:showTitle="false"

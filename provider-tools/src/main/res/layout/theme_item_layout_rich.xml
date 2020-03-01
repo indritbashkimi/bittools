@@ -7,18 +7,13 @@
     tools:layout_height="match_parent"
     tools:layout_width="match_parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:background="?colorPrimary" />
-
     <LinearLayout
+        style="?appBarLayoutStyle"
         android:layout_width="match_parent"
-        android:layout_height="24dp"
+        android:layout_height="48dp"
         android:background="?colorPrimary"
-        android:baselineAligned="false"
-        android:orientation="horizontal"
-        android:theme="?attr/appBarStyle">
+        android:gravity="center|bottom"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
@@ -26,7 +21,7 @@
             android:layout_weight="0.5"
             android:gravity="center"
             android:text="@string/section_n_2"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="?textAppearanceBody1" />
 
         <TextView
             android:layout_width="0dp"
@@ -34,7 +29,7 @@
             android:layout_weight="0.5"
             android:gravity="center"
             android:text="@string/section_n_3"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="?textAppearanceBody1" />
 
     </LinearLayout>
 
@@ -45,6 +40,6 @@
         android:background="?android:colorBackground"
         android:gravity="center"
         android:text="@string/section_n_1"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        android:textAppearance="?textAppearanceBody1" />
 
 </LinearLayout>

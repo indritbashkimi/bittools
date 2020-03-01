@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/appBar"
+    style="?appBarLayoutStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="4dp"
-    android:theme="?attr/appBarStyle">
+    android:elevation="4dp">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="?attr/toolbarStyle"
+        style="?toolbarStyle"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
 

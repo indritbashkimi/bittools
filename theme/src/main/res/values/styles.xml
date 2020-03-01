@@ -1,359 +1,40 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
-    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimaryLight">?colorPrimary</item>
-        <item name="colorSecondaryLight">?colorSecondary</item>
-        <item name="colorOnPrimary">@color/tint_light</item>
-        <item name="colorSecondaryDark">?colorSecondary</item>
-        <item name="colorOnSecondary">@color/tint_light</item>
-        <item name="colorOnBackground">?android:textColorPrimary</item>
-
-        <item name="windowActionModeOverlay">true</item>
-        <item name="actionModeBackground">?attr/colorPrimary</item>
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
-
-        <item name="appBarStyle">@style/Widget.AppTheme.AppBar.Dark</item>
-        <item name="toolbarStyle">@style/Widget.AppTheme.Toolbar.Dark</item>
-        <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
+    <style name="Widget.App.AppBarLayout.Primary" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+        <item name="android:elevation">4dp</item>
     </style>
 
-    <style name="AppTheme.DayNight" parent="BaseTheme" />
-
-    <style name="AppTheme.DayNight.LightPrimaryColor">
-        <item name="appBarStyle">@style/Widget.AppTheme.AppBar.Light</item>
-        <item name="toolbarStyle">@style/Widget.AppTheme.Toolbar.Light</item>
-        <item name="colorOnPrimary">@color/tint_dark</item>
+    <style name="Widget.App.AppBarLayout.Primary.LightText">
+        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Dark</item>
     </style>
 
-    <style name="AppTheme.DayNight.Material" parent="AppTheme.DayNight" />
-
-    <style name="AppTheme.DayNight.BlackWhite">
-        <item name="colorPrimaryDark">#757575</item>
-        <item name="appBarStyle">@style/AppActionBar</item>
-        <item name="toolbarStyle">@style/AppToolbar</item>
-        <item name="colorOnPrimary">@color/tint_dark</item>
+    <style name="Widget.App.AppBarLayout.Primary.DarkText" parent="Widget.MaterialComponents.AppBarLayout.Primary">
+        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Light</item>
     </style>
 
-    <style name="AppToolbar" parent="@style/Widget.MaterialComponents.Toolbar">
-        <item name="android:background">?android:attr/colorBackground</item>
+    <style name="Widget.App.AppBarLayout.Surface" parent="Widget.MaterialComponents.AppBarLayout.PrimarySurface" />
+
+    <style name="Widget.App.Toolbar.Primary" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:elevation">0dp</item>
+        <item name="popupTheme">@style/Theme.MaterialComponents.DayNight</item>
     </style>
 
-    <style name="AppActionBar" parent="ThemeOverlay.MaterialComponents.Light">
-        <item name="android:background">?android:colorBackground</item>
+    <style name="Widget.App.Toolbar.Primary.Elevated" parent="Widget.MaterialComponents.Toolbar.Primary" />
+
+    <style name="Widget.App.Toolbar.Surface" parent="Widget.MaterialComponents.Toolbar.Surface" />
+
+    <style name="Widget.App.PopupMenu" parent="ThemeOverlay.MaterialComponents" />
+
+    <style name="Widget.App.PopupMenu.Surface" parent="Widget.MaterialComponents.PopupMenu" />
+
+    <style name="Widget.App.PopupMenu.Overflow" parent="Widget.MaterialComponents.PopupMenu.Overflow" />
+
+    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView" />
+
+    <style name="Widget.App.CardView.Colored">
+        <item name="cardBackgroundColor">?colorError</item>
+        <item name="android:textColor">?colorOnError</item>
     </style>
 
-    <style name="AppTheme.DayNight.BlackWhite.Blue">
-        <item name="colorPrimary">@color/blue_a200</item>
-        <item name="colorSecondary">@color/blue_a200</item>
-        <item name="colorOnPrimary">#fff</item>
-        <item name="colorOnSecondary">#fff</item>
-    </style>
-
-    <style name="AppTheme.DayNight.BlackWhite.Teal">
-        <item name="colorPrimary">?colorSecondary</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Amber" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/amber_500</item>
-        <item name="colorPrimaryDark">@color/amber_700</item>
-        <item name="colorSecondary">@color/light_blue_a400</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Blue">
-        <item name="colorPrimary">@color/blue_500</item>
-        <item name="colorPrimaryDark">@color/blue_700</item>
-        <item name="colorSecondary">@color/lime_a700</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-    </style>
-
-    <style name="AppTheme.DayNight.BlueGrey">
-        <item name="colorPrimary">@color/blue_grey_500</item>
-        <item name="colorPrimaryDark">@color/blue_grey_700</item>
-        <item name="colorSecondary">@color/red_a400</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Brown">
-        <item name="colorPrimary">@color/brown_500</item>
-        <item name="colorPrimaryDark">@color/brown_700</item>
-        <item name="colorSecondary">@color/red_a400</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Cyan" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/cyan_500</item>
-        <item name="colorPrimaryDark">@color/cyan_700</item>
-        <item name="colorSecondary">@color/amber_a400</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-    </style>
-
-    <style name="AppTheme.DayNight.DeepOrange">
-        <item name="colorPrimary">@color/deep_orange_500</item>
-        <item name="colorPrimaryDark">@color/deep_orange_700</item>
-        <item name="colorSecondary">@color/indigo_a200</item>
-    </style>
-
-    <style name="AppTheme.DayNight.DeepPurple">
-        <item name="colorPrimary">@color/deep_purple_500</item>
-        <item name="colorPrimaryDark">@color/deep_purple_700</item>
-        <item name="colorSecondary">@color/red_a400</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Gray" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/gray_500</item>
-        <item name="colorPrimaryDark">@color/gray_700</item>
-        <item name="colorSecondary">@color/pink_a400</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Green" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/green_500</item>
-        <item name="colorPrimaryDark">@color/green_700</item>
-        <item name="colorSecondary">@color/red_a400</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Indigo">
-        <item name="colorPrimary">@color/indigo_500</item>
-        <item name="colorPrimaryDark">@color/indigo_700</item>
-        <item name="colorSecondary">@color/pink_a400</item>
-    </style>
-
-    <style name="AppTheme.DayNight.LightBlue" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/light_blue_500</item>
-        <item name="colorPrimaryDark">@color/light_blue_700</item>
-        <item name="colorSecondary">@color/pink_a200</item>
-    </style>
-
-    <style name="AppTheme.DayNight.LightGreen" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/light_green_500</item>
-        <item name="colorPrimaryDark">@color/light_green_700</item>
-        <item name="colorSecondary">@color/cyan_500</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Lime" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/lime_500</item>
-        <item name="colorPrimaryDark">@color/lime_700</item>
-        <item name="colorSecondary">@color/light_blue_500</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Orange" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/orange_500</item>
-        <item name="colorPrimaryDark">@color/orange_700</item>
-        <item name="colorSecondary">@color/teal_a700</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Pink">
-        <item name="colorPrimary">@color/pink_500</item>
-        <item name="colorPrimaryDark">@color/pink_700</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Pink.Blue">
-        <item name="colorSecondary">@color/blue_a200</item>
-        <item name="colorOnSecondary">#000</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Pink.Lime">
-        <item name="colorSecondary">@color/lime_a700</item>
-        <item name="colorOnSecondary">#000</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Purple">
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Purple.Red">
-        <item name="colorSecondary">@color/red_a200</item>
-        <item name="colorSecondaryVariant">@color/red_a400</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Purple.Green">
-        <item name="colorSecondary">@color/green_a400</item>
-        <item name="colorOnSecondary">#000</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Red">
-        <item name="colorPrimary">@color/red_500</item>
-        <item name="colorPrimaryDark">@color/red_600</item>
-        <item name="colorPrimaryVariant">@color/red_600</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Red.Blue">
-        <item name="colorSecondary">@color/blue_500</item>
-        <item name="colorSecondaryVariant">@color/blue_700</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Red.Teal">
-        <item name="colorSecondary">@color/teal_500</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Teal">
-        <item name="colorPrimary">@color/teal_500</item>
-        <item name="colorPrimaryDark">@color/teal_700</item>
-        <item name="colorSecondary">@color/teal_500</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Yellow" parent="AppTheme.DayNight.LightPrimaryColor">
-        <item name="colorPrimary">@color/yellow_500</item>
-        <item name="colorPrimaryDark">@color/yellow_700</item>
-        <item name="colorSecondary">@color/red_a200</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    </style>
-
-    <style name="AppTheme.DayNight.LightRed">
-        <item name="colorPrimary">#FA5456</item>
-        <item name="colorPrimaryDark">#D6484A</item>
-        <item name="colorSecondary">#56A3B0</item>
-    </style>
-
-    <style name="AppTheme.DayNight.WetAsphalt">
-        <item name="colorPrimary">@color/wet_asphalt</item>
-        <item name="colorPrimaryDark">@color/midnight_blue</item>
-        <item name="colorSecondary">@color/alizarin</item>
-    </style>
-
-    <style name="AppTheme.DayNight.Alizarin">
-        <item name="colorPrimary">@color/alizarin</item>
-        <item name="colorPrimaryDark">@color/pomegranate</item>
-        <item name="colorSecondary">#4f7090</item>
-    </style>
-
-
-    <style name="BaseTheme.Extra" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="appBarStyle">@style/Widget.AppTheme.AppBar.Dark</item>
-        <item name="toolbarStyle">@style/Widget.AppTheme.Toolbar.Dark</item>
-        <item name="colorOnSecondary">@color/tint_light</item>
-        <item name="popupTheme">@style/Theme.MaterialComponents.Light.Dialog</item>
-        <item name="alertDialogTheme">@style/Theme.MaterialComponents.Dialog.Alert</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="actionModeBackground">?attr/colorPrimary</item>
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
-        <item name="colorPrimaryLight">?colorPrimary</item>
-        <item name="colorError">@color/error_surface</item>
-        <item name="colorOnError">@color/error_surface_text_color</item>
-        <item name="colorSurface">?colorPrimary</item>
-        <item name="cardBackgroundColor">?colorSurface</item>
-        <item name="surfaceStyle">@style/MyCardView</item>
-        <item name="colorOnPrimary">?android:textColorPrimary</item>
-        <item name="colorOnBackground">?android:textColorPrimary</item>
-    </style>
-
-    <style name="BaseTheme.Extra.LightPrimaryColor" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="appBarStyle">@style/Widget.AppTheme.AppBar.Light</item>
-        <item name="toolbarStyle">@style/Widget.AppTheme.Toolbar.Light</item>
-        <item name="colorOnSecondary">@color/tint_light</item>
-        <item name="popupTheme">@style/Theme.MaterialComponents.Light.Dialog</item>
-        <item name="alertDialogTheme">@style/Theme.MaterialComponents.Dialog.Alert</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="actionModeBackground">?attr/colorPrimary</item>
-        <item name="android:windowAllowEnterTransitionOverlap">true</item>
-        <item name="android:windowAllowReturnTransitionOverlap">true</item>
-        <item name="colorPrimaryLight">?colorPrimary</item>
-        <item name="colorError">@color/error_surface</item>
-        <item name="colorOnError">@color/error_surface_text_color</item>
-        <item name="colorSurface">?colorPrimary</item>
-        <item name="cardBackgroundColor">?colorSurface</item>
-        <item name="surfaceStyle">@style/MyCardView</item>
-        <item name="colorOnPrimary">?android:textColorPrimary</item>
-        <item name="colorOnBackground">?android:textColorPrimary</item>
-    </style>
-
-    <style name="AppTheme.Extra" parent="BaseTheme.Extra"></style>
-
-    <style name="AppTheme.Extra.LightPrimaryColor" parent="BaseTheme.Extra.LightPrimaryColor"></style>
-
-    <style name="AppTheme.Extra.Brown">
-        <item name="colorPrimary">#a98274</item>
-        <item name="colorPrimaryDark">#4b2c20</item>
-        <item name="android:colorBackground">@color/brown_500</item>
-        <item name="colorSecondary">@color/deep_orange_a200</item>
-        <item name="colorSecondaryLight">#ffa06d</item>
-        <item name="colorSecondaryDark">#c53d13</item>
-    </style>
-
-    <style name="AppTheme.Extra.DeepPurple">
-        <item name="colorPrimary">#9162e4</item>
-        <item name="colorPrimaryDark">#280680</item>
-        <item name="android:colorBackground">@color/deep_purple_600</item>
-        <item name="colorSecondary">@color/red_a200</item>
-        <item name="colorSecondaryLight">#ff867f</item>
-        <item name="colorSecondaryDark">#c50e29</item>
-    </style>
-
-    <style name="AppTheme.Extra.Indigo">
-        <item name="colorPrimary">#5f5fc4</item>
-        <item name="colorPrimaryDark">#001064</item>
-        <item name="android:colorBackground">@color/indigo_background</item>
-        <item name="colorSecondary">#1eb980</item>
-        <item name="colorSecondaryLight">#66ffa6</item>
-        <item name="colorSecondaryDark">#045d56</item>
-    </style>
-
-
-    <style name="AppTheme.Extra.Cyan" parent="AppTheme.Extra.LightPrimaryColor">
-        <item name="colorPrimary">#62efff</item>
-        <item name="colorPrimaryDark">#008ba3</item>
-        <item name="android:colorBackground">@color/cyan_500</item>
-        <item name="colorSecondary">@color/amber_a100</item>
-        <item name="colorSecondaryLight">#ffffb0</item>
-        <item name="colorSecondaryDark">#cab350</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    </style>
-
-    <style name="AppTheme.Extra.Gray">
-        <item name="colorPrimary">#8e8e8e</item>
-        <item name="colorPrimaryDark">#373737</item>
-        <item name="android:colorBackground">@color/gray_700</item>
-        <item name="colorSecondary">@color/amber_a100</item>
-        <item name="colorSecondaryLight">#ffffb0</item>
-        <item name="colorSecondaryDark">#cab350</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-    </style>
-
-    <style name="AppTheme.Extra.Purple">
-        <item name="colorPrimary">#d05ce3</item>
-        <item name="colorPrimaryDark">#6a0080</item>
-        <item name="android:colorBackground">@color/purple_500</item>
-        <item name="colorSecondary">@color/green_a200</item>
-        <item name="colorSecondaryLight">#9fffe0</item>
-        <item name="colorSecondaryDark">#2bbd7e</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-    </style>
-
-    <style name="AppTheme.Extra.CranePurple">
-        <item name="colorPrimary">#720d5d</item>
-        <item name="colorPrimaryDark">#4e0d3a</item>
-        <item name="android:colorBackground">@color/crane_purple_primary</item>
-        <item name="colorSecondary">#e30425</item>
-        <item name="colorSecondaryLight">#ff554f</item>
-        <item name="colorSecondaryDark">#a80000</item>
-        <item name="colorSurface">#4e0d3a</item>
-    </style>
-
-    <style name="AppTheme.Full.Owl" parent="AppTheme.Extra.LightPrimaryColor">
-        <item name="colorPrimary">@color/owl_primary_light</item>
-        <item name="colorPrimaryDark">#ffc000</item>
-        <item name="android:colorBackground">@color/owl_primary</item>
-        <item name="colorSecondary">#0336ff</item>
-        <item name="colorSecondaryLight">#6f63ff</item>
-        <item name="colorSecondaryDark">#0008ca</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-    </style>
-
-    <style name="AppTheme.Extra.Reply">
-        <item name="colorPrimary">@color/reply_primary_light</item>
-        <item name="colorPrimaryDark">@color/reply_primary_dark</item>
-        <item name="android:colorBackground">@color/reply_primary</item>
-        <item name="colorSecondary">@color/reply_secondary</item>
-        <item name="colorSecondaryLight">#ffdc65</item>
-        <item name="colorSecondaryDark">#c17b00</item>
-        <item name="colorOnSecondary">@color/tint_dark</item>
-    </style>
 </resources>
