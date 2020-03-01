@@ -9,6 +9,7 @@ import com.ibashkimi.shared.PreferenceHelper
 import com.ibashkimi.theme.preference.DecodedTheme
 import com.ibashkimi.theme.preference.decodeTheme
 import com.ibashkimi.theme.theme.Theme
+import kotlinx.coroutines.Dispatchers
 
 class ThemeViewModel(app: Application) : AndroidViewModel(app) {
 
@@ -30,7 +31,7 @@ class ThemeViewModel(app: Application) : AndroidViewModel(app) {
         preferences.theme = theme
     }
 
-    fun themes(context: Context): LiveData<Pair<List<DecodedTheme>, Int>> = liveData {
+    fun themes(context: Context): LiveData<Pair<List<DecodedTheme>, Int>> = liveData(Dispatchers.IO) {
         val decodedThemes = themes.map { decodeTheme(context, it) }
         val selectedThemeIndex = themes.indexOf(preferences.theme)
         emit(Pair(decodedThemes, selectedThemeIndex))
