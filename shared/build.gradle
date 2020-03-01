@@ -42,7 +42,8 @@ dependencies {
     androidTestImplementation deps.test.espresso.core
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':theme')
-    implementation deps.kotlin.stdlib
+    api deps.kotlin.stdlib
+    api deps.kotlin.coroutines
     // ViewModel and LiveData
     api deps.lifecycle.extensions
     api deps.lifecycle.viewmodel
