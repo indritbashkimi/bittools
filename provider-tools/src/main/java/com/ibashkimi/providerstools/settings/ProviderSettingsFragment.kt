@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +18,10 @@ class ProviderSettingsFragment : Fragment() {
 
     private val args: ProviderSettingsFragmentArgs by navArgs()
 
-    lateinit var viewModel: ProviderSettingsViewModel
+    val viewModel: ProviderSettingsViewModel by viewModels(
+        { this },
+        { ProviderSettingsViewModelFactory(requireActivity().application, args.tool) }
+    )
 
     private lateinit var adapter: WidgetAdapter
 
@@ -27,11 +30,6 @@ class ProviderSettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val viewModelFactory =
-            ProviderSettingsViewModelFactory(requireActivity().application, args.tool)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(
-            ProviderSettingsViewModel::class.java
-        )
         val root = inflater.inflate(R.layout.fragment_provider_settings, container, false)
 
         root.findViewById<Toolbar>(R.id.toolbar).apply {
