@@ -57,8 +57,11 @@ class ProviderSettingsViewModel(app: Application, tool: Tool) : AndroidViewModel
 class ProviderSettingsViewModelFactory(private val application: Application, val tool: Tool) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return modelClass.getConstructor(Application::class.java, Tool::class.java)
-            .newInstance(application, tool)
+        if (modelClass.isAssignableFrom(ProviderSettingsViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return ProviderSettingsViewModel(application, tool) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 
 }
