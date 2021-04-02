@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
+    testImplementation deps.test.junit
     androidTestImplementation deps.test.runner
     androidTestImplementation deps.test.espresso.core
     implementation fileTree(include: ['*.jar'], dir: 'libs')
