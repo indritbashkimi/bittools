@@ -25,7 +25,7 @@ abstract class GpsBasedProvider(context: Context, private var minTime: Int) :
         this.locationManager =
             context.applicationContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager?
         val criteria = Criteria()
-        this.provider = locationManager!!.getBestProvider(criteria, false)
+        this.provider = locationManager!!.getBestProvider(criteria, false)!!
     }
 
     @SuppressLint("MissingPermission")
