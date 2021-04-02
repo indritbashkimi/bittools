@@ -43,6 +43,5 @@ dependencies {
     api deps.androidx.cardview
     api deps.androidx.preference
     implementation deps.androidx.gridlayout
-    implementation deps.androidx.palette
     implementation deps.androidx.recyclerview
 }
