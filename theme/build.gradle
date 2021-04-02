@@ -36,7 +36,6 @@ dependencies {
     androidTestImplementation deps.test.runner
     androidTestImplementation deps.test.espresso.core
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation deps.kotlin.stdlib
     api deps.google.material
     api deps.androidx.appcompat
     api deps.androidx.annotation

@@ -48,7 +48,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':provider-tools')
     implementation project(':ruler')
-    implementation deps.kotlin.stdlib
     implementation deps.androidx.browser
     kapt deps.lifecycle.compiler
     implementation deps.androidx.core

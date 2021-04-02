@@ -46,7 +46,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':provider')
     api project(':shared')
-    implementation deps.kotlin.stdlib
     implementation deps.androidx.percentlayout
     implementation deps.androidx.cardview
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'

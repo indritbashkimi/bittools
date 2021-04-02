@@ -39,5 +39,4 @@ dependencies {
     androidTestImplementation deps.test.espresso.core
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':shared')
-    implementation deps.kotlin.stdlib
 }
