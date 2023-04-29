@@ -19,8 +19,13 @@ class ProviderSettingsFragment : Fragment() {
     private val args: ProviderSettingsFragmentArgs by navArgs()
 
     val viewModel: ProviderSettingsViewModel by viewModels(
-        { this },
-        { ProviderSettingsViewModelFactory(requireActivity().application, args.tool) }
+        ownerProducer = { this },
+        factoryProducer = {
+            ProviderSettingsViewModelFactory(
+                requireActivity().application,
+                args.tool
+            )
+        }
     )
 
     private lateinit var adapter: WidgetAdapter

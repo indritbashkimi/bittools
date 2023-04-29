@@ -191,7 +191,7 @@ class MainActivity : BitToolsActivity(), SharedPreferences.OnSharedPreferenceCha
                 continue
             ToolPreferenceHelper(
                 tool,
-                getSharedPreferences(tool.name.toLowerCase(Locale.ENGLISH), Context.MODE_PRIVATE)
+                getSharedPreferences(tool.name.lowercase(Locale.ENGLISH), Context.MODE_PRIVATE)
             )
                 .apply {
                     if (setLayout) {

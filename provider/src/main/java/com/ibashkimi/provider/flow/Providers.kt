@@ -14,7 +14,7 @@ fun sensorFlow(
     type: Int,
     samplingRate: Int
 ): Flow<SensorData> = callbackFlow {
-    val listener = ProviderListener { offer(it) }
+    val listener = ProviderListener { trySend(it) }
     val provider =
         ProviderFactory.createProviderForDebugging(context, type, samplingRate)
     provider.register(listener)

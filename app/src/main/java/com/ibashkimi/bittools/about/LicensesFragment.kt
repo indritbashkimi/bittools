@@ -107,7 +107,7 @@ class LicensesFragment : Fragment() {
             holder.licence.setText(lib.license)
 
             val clickListener: View.OnClickListener = View.OnClickListener {
-                val position = holder.adapterPosition
+                val position = holder.bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     val builder = CustomTabsIntent.Builder()
                     builder.setToolbarColor(

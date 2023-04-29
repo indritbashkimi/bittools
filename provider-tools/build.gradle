@@ -5,13 +5,12 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
 
 android {
+    namespace "com.ibashkimi.providerstools"
     compileSdkVersion versions.android.compileSdk
     buildToolsVersion versions.android.buildTools
     defaultConfig {
         minSdkVersion versions.android.minSdk
         targetSdkVersion versions.android.targetSdk
-        versionCode 1
-        versionName "1.0"
     }
     buildFeatures {
         viewBinding = true
@@ -29,12 +28,12 @@ android {
         maven { url "https://jitpack.io" }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -47,7 +46,5 @@ dependencies {
     api project(':shared')
     implementation deps.androidx.percentlayout
     implementation deps.androidx.cardview
-    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
-    // ViewModel and LiveData
-    kapt deps.lifecycle.compiler
+    implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
 }

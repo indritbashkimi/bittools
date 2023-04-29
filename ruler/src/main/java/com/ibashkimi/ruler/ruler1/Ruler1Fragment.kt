@@ -33,7 +33,7 @@ class Ruler1Fragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         val x = prefs.getFloat(RULER1_X_TOUCH, 0f)
         val y = prefs.getFloat(RULER1_Y_TOUCH, 0f)
         overlay.setPoint(x, y)
@@ -41,7 +41,7 @@ class Ruler1Fragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        PreferenceManager.getDefaultSharedPreferences(context)
+        PreferenceManager.getDefaultSharedPreferences(requireContext())
             .edit()
             .putFloat(RULER1_X_TOUCH, overlay.x)
             .putFloat(RULER1_Y_TOUCH, overlay.y)

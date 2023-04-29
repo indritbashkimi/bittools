@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.fragment.app.Fragment
@@ -53,7 +54,7 @@ class AboutFragment : Fragment() {
                 val itemLayout = LayoutInflater.from(mainLayout.context)
                     .inflate(R.layout.item_section_item, mainLayout, false)
                 itemLayout.findViewById<ImageView>(R.id.icon)
-                    .setImageDrawable(requireContext().getDrawable(item.icon))
+                    .setImageDrawable(AppCompatResources.getDrawable(requireContext(), item.icon))
                 itemLayout.findViewById<TextView>(R.id.title)
                     .setText(item.title)
                 itemLayout.setOnClickListener(item.onClick)

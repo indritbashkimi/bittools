@@ -18,13 +18,13 @@ class PrefsFragment : PreferenceFragmentCompat(),
         preferenceManager.sharedPreferencesName = PreferenceHelper.PREFERENCES_NAME
         addPreferencesFromResource(R.xml.pref_general)
 
-        val hasSoftKeys = preferenceManager.sharedPreferences
+        val hasSoftKeys = preferenceManager.sharedPreferences!!
             .getBoolean("has_soft_keys", true)
         if (!hasSoftKeys) {
             findPreference<Preference>("nav_bar_color")?.isVisible = false
         }
 
-        val showUnsupportedTools = preferenceManager.sharedPreferences
+        val showUnsupportedTools = preferenceManager.sharedPreferences!!
             .getBoolean("show_unsupported_tools", true)
         if (!showUnsupportedTools) {
             onShowUnsupportedToolsChanged(false)
@@ -33,12 +33,12 @@ class PrefsFragment : PreferenceFragmentCompat(),
 
     override fun onResume() {
         super.onResume()
-        preferenceManager.sharedPreferences.registerOnSharedPreferenceChangeListener(this)
+        preferenceManager.sharedPreferences?.registerOnSharedPreferenceChangeListener(this)
     }
 
     override fun onPause() {
         super.onPause()
-        preferenceManager.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
+        preferenceManager.sharedPreferences?.unregisterOnSharedPreferenceChangeListener(this)
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
@@ -51,10 +51,10 @@ class PrefsFragment : PreferenceFragmentCompat(),
     }
 
     private fun onShowUnsupportedToolsChanged(show: Boolean) {
-        val tools = preferenceManager.sharedPreferences
+        val tools = preferenceManager.sharedPreferences!!
             .getStringSet("unsupported_tools", null) ?: return
         for (tool in tools) {
-            findPreference<Preference>(tool.toLowerCase(Locale.ENGLISH))?.isVisible = show
+            findPreference<Preference>(tool.lowercase(Locale.ENGLISH))?.isVisible = show
         }
     }
 

@@ -2,10 +2,10 @@ buildscript {
     apply from: 'versions.gradle'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath 'com.android.tools.build:gradle:8.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.androidx.navigation}"
     }
@@ -15,7 +15,6 @@ allprojects {
     repositories {
         mavenLocal()
         google()
-        jcenter()
         mavenCentral()
     }
 }

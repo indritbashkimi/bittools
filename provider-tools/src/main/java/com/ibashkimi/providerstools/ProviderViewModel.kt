@@ -5,7 +5,8 @@ import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.map
+import androidx.lifecycle.switchMap
 import com.ibashkimi.provider.factories.ProviderFactory
 import com.ibashkimi.provider.livedata.SensorLiveData
 import com.ibashkimi.provider.providerdata.SensorData
@@ -23,12 +24,12 @@ class ProviderViewModel(app: Application) : AndroidViewModel(app) {
 
     val measurementUnit = MutableLiveData<MeasureUnit>()
 
-    val sensorData: LiveData<SensorData> = Transformations.switchMap(_tool) { tool ->
+    val sensorData: LiveData<SensorData> = _tool.switchMap { tool ->
         val newLiveData = getProviderLiveData(tool).also {
             _providerLiveData = it
         }
         measurementUnit.value?.dataProcessor?.let { processor ->
-            Transformations.map(newLiveData) {
+            newLiveData.map {
                 processor.process(it)
             }
         } ?: _providerLiveData

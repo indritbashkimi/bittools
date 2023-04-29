@@ -18,10 +18,10 @@ fun <T> SharedPreferences.getFlow(
 ): Flow<T?> = callbackFlow {
     val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, k ->
         if (k == key) {
-            offer(getter(key))
+            trySend(getter(key))
         }
     }
     registerOnSharedPreferenceChangeListener(listener)
-    offer(getter(key))
+    trySend(getter(key))
     awaitClose { unregisterOnSharedPreferenceChangeListener(listener) }
 }

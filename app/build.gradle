@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs'
 
 android {
+    namespace "com.ibashkimi.bittools"
     compileSdkVersion versions.android.compileSdk
     buildToolsVersion versions.android.buildTools
     defaultConfig {
@@ -13,7 +14,7 @@ android {
         targetSdkVersion versions.android.targetSdk
         versionCode 21
         versionName '1.5.0'
-        resConfigs "en", "it", "sq"
+        resourceConfigurations += ['en', 'it', 'sq']
     }
     buildTypes {
         debug {
@@ -34,12 +35,12 @@ android {
         maven { url "https://jitpack.io" }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
