@@ -33,9 +33,15 @@ android {
 }
 
 dependencies {
+    implementation project(':shared')
+    implementation project(':theme')
+
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.fragment
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.preference
+
     testImplementation libs.junit4
     androidTestImplementation libs.androidx.test.runner
     androidTestImplementation libs.androidx.test.espresso.core
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':shared')
 }

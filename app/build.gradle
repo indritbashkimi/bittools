@@ -45,11 +45,19 @@ android {
 }
 
 dependencies {
-    testImplementation libs.junit4
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':provider-tools')
     implementation project(':ruler')
+    implementation project(':shared')
+    implementation project(':theme')
+
+    implementation libs.androidx.appcompat
     implementation libs.androidx.browser
     implementation libs.androidx.core
+    implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
     implementation libs.androidx.recyclerview
+    implementation libs.androidx.preference
+
+    testImplementation libs.junit4
 }

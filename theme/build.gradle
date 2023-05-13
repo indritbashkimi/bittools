@@ -27,15 +27,15 @@ android {
 }
 
 dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.annotation
+    implementation libs.androidx.cardview
+    implementation libs.androidx.preference
+    implementation libs.androidx.gridlayout
+    implementation libs.androidx.recyclerview
+    implementation libs.google.material
+
     testImplementation libs.junit4
     androidTestImplementation libs.androidx.test.runner
     androidTestImplementation libs.androidx.test.espresso.core
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api libs.google.material
-    api libs.androidx.appcompat
-    api libs.androidx.annotation
-    api libs.androidx.cardview
-    api libs.androidx.preference
-    implementation libs.androidx.gridlayout
-    implementation libs.androidx.recyclerview
 }

@@ -33,15 +33,16 @@ android {
 }
 
 dependencies {
+    implementation project(':theme')
+
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.androidx.lifecycle.viewmodel
+    implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
+
     testImplementation libs.junit4
     androidTestImplementation libs.androidx.test.runner
     androidTestImplementation libs.androidx.test.espresso.core
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':theme')
-    api libs.kotlinx.coroutines.core
-    api libs.androidx.lifecycle.viewmodel
-    api libs.androidx.lifecycle.livedata
-    api libs.androidx.lifecycle.runtime
-    api libs.androidx.navigation.fragment
-    api libs.androidx.navigation.ui
 }

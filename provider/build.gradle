@@ -32,9 +32,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation libs.androidx.appcompat
+    implementation libs.kotlinx.coroutines.android
+
     testImplementation libs.junit4
     androidTestImplementation libs.androidx.test.espresso.core
-    implementation libs.kotlinx.coroutines.android
 }

@@ -38,13 +38,18 @@ android {
 }
 
 dependencies {
+    implementation project(':provider')
+    implementation project(':shared')
+    implementation project(':theme')
+
+    implementation libs.androidx.cardview
+    implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.percentlayout
+    implementation libs.google.material
+    implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
+
     testImplementation libs.junit4
     androidTestImplementation libs.androidx.test.runner
     androidTestImplementation libs.androidx.test.espresso.core
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':provider')
-    api project(':shared')
-    implementation libs.androidx.percentlayout
-    implementation libs.androidx.cardview
-    implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
 }
