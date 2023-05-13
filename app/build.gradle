@@ -1,25 +1,27 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-parcelize'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'androidx.navigation.safeargs'
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
+    id("androidx.navigation.safeargs")
+}
 
 android {
-    namespace "com.ibashkimi.bittools"
-    compileSdkVersion versions.android.compileSdk
-    buildToolsVersion versions.android.buildTools
+    namespace = "com.ibashkimi.bittools"
+    compileSdk = versions.android.compileSdk
+    buildToolsVersion(versions.android.buildTools)
     defaultConfig {
-        applicationId "com.ibashkimi.bittools"
-        minSdkVersion versions.android.minSdk
-        targetSdkVersion versions.android.targetSdk
-        versionCode 21
-        versionName '1.5.0'
-        resourceConfigurations += ['en', 'it', 'sq']
+        applicationId = "com.ibashkimi.bittools"
+        minSdk = versions.android.minSdk
+        targetSdk = versions.android.targetSdk
+        versionCode = 21
+        versionName = "1.5.0"
+        resourceConfigurations += ["en", "it", "sq"]
     }
     buildTypes {
         debug {
-            applicationIdSuffix ".debug"
-            versionNameSuffix '-dev'
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-dev"
         }
         release {
             /*lintOptions {
@@ -27,16 +29,16 @@ android {
             }*/
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
 
     repositories {
-        maven { url "https://jitpack.io" }
+        maven { url = "https://jitpack.io" }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
@@ -45,19 +47,19 @@ android {
 }
 
 dependencies {
-    implementation project(':provider-tools')
-    implementation project(':ruler')
-    implementation project(':shared')
-    implementation project(':theme')
+    implementation(project(":provider-tools"))
+    implementation(project(":ruler"))
+    implementation(project(":shared"))
+    implementation(project(":theme"))
 
-    implementation libs.androidx.appcompat
-    implementation libs.androidx.browser
-    implementation libs.androidx.core
-    implementation libs.androidx.lifecycle.livedata
-    implementation libs.androidx.navigation.fragment
-    implementation libs.androidx.navigation.ui
-    implementation libs.androidx.recyclerview
-    implementation libs.androidx.preference
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.browser)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.lifecycle.livedata)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.preference)
 
-    testImplementation libs.junit4
+    testImplementation(libs.junit4)
 }

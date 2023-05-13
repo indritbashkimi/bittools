@@ -3,7 +3,7 @@ buildscript {
         versions = [
                 android: [
                         compileSdk: 33,
-                        buildTools: '33.0.2',
+                        buildTools: "33.0.2",
                         minSdk    : 21,
                         targetSdk : 33
                 ]
@@ -14,9 +14,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath libs.gradle.plugin.android
-        classpath libs.gradle.plugin.kotlin
-        classpath libs.gradle.plugin.navigationSafeArgs
+        classpath(libs.gradle.plugin.android)
+        classpath(libs.gradle.plugin.kotlin)
+        classpath(libs.gradle.plugin.navigationSafeArgs)
     }
 }
 

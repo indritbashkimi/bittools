@@ -1,16 +1,18 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-parcelize'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'androidx.navigation.safeargs'
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
+    id("androidx.navigation.safeargs")
+}
 
 android {
-    namespace "com.ibashkimi.providerstools"
-    compileSdkVersion versions.android.compileSdk
-    buildToolsVersion versions.android.buildTools
+    namespace = "com.ibashkimi.providerstools"
+    compileSdk = versions.android.compileSdk
+    buildToolsVersion(versions.android.buildTools)
     defaultConfig {
-        minSdkVersion versions.android.minSdk
-        targetSdkVersion versions.android.targetSdk
+        minSdk = versions.android.minSdk
+        targetSdk = versions.android.targetSdk
     }
     buildFeatures {
         viewBinding = true
@@ -18,18 +20,18 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
     productFlavors {
     }
 
     repositories {
-        maven { url "https://jitpack.io" }
+        maven { url = "https://jitpack.io" }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
@@ -38,18 +40,18 @@ android {
 }
 
 dependencies {
-    implementation project(':provider')
-    implementation project(':shared')
-    implementation project(':theme')
+    implementation(project(':provider'))
+    implementation(project(":shared"))
+    implementation(project(":theme"))
 
-    implementation libs.androidx.cardview
-    implementation libs.androidx.lifecycle.livedata
-    implementation libs.androidx.navigation.fragment
-    implementation libs.androidx.percentlayout
-    implementation libs.google.material
-    implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
+    implementation(libs.androidx.cardview)
+    implementation(libs.androidx.lifecycle.livedata)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.percentlayout)
+    implementation(libs.google.material)
+    implementation("com.github.PhilJay:MPAndroidChart:3.1.0")
 
-    testImplementation libs.junit4
-    androidTestImplementation libs.androidx.test.runner
-    androidTestImplementation libs.androidx.test.espresso.core
+    testImplementation(libs.junit4)
+    androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.androidx.test.espresso.core)
 }
