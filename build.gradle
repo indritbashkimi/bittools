@@ -1,13 +1,22 @@
 buildscript {
-    apply from: 'versions.gradle'
+    ext {
+        versions = [
+                android: [
+                        compileSdk: 33,
+                        buildTools: '33.0.2',
+                        minSdk    : 21,
+                        targetSdk : 33
+                ]
+        ]
+    }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.androidx.navigation}"
+        classpath libs.gradle.plugin.android
+        classpath libs.gradle.plugin.kotlin
+        classpath libs.gradle.plugin.navigationSafeArgs
     }
 }
 

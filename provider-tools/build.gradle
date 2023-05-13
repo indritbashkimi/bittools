@@ -38,13 +38,13 @@ android {
 }
 
 dependencies {
-    testImplementation deps.test.junit
-    androidTestImplementation deps.test.runner
-    androidTestImplementation deps.test.espresso.core
+    testImplementation libs.junit4
+    androidTestImplementation libs.androidx.test.runner
+    androidTestImplementation libs.androidx.test.espresso.core
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':provider')
     api project(':shared')
-    implementation deps.androidx.percentlayout
-    implementation deps.androidx.cardview
+    implementation libs.androidx.percentlayout
+    implementation libs.androidx.cardview
     implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
 }

@@ -45,12 +45,11 @@ android {
 }
 
 dependencies {
-    testImplementation deps.test.junit
+    testImplementation libs.junit4
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':provider-tools')
     implementation project(':ruler')
-    implementation deps.androidx.browser
-    kapt deps.lifecycle.compiler
-    implementation deps.androidx.core
-    implementation deps.androidx.recyclerview
+    implementation libs.androidx.browser
+    implementation libs.androidx.core
+    implementation libs.androidx.recyclerview
 }

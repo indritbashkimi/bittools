@@ -33,17 +33,15 @@ android {
 }
 
 dependencies {
-    testImplementation deps.test.junit
-    androidTestImplementation deps.test.runner
-    androidTestImplementation deps.test.espresso.core
+    testImplementation libs.junit4
+    androidTestImplementation libs.androidx.test.runner
+    androidTestImplementation libs.androidx.test.espresso.core
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':theme')
-    api deps.kotlin.coroutines
-    // ViewModel and LiveData
-    api deps.lifecycle.viewmodel
-    api deps.lifecycle.livedata
-    api deps.lifecycle.runtime
-    kapt deps.lifecycle.compiler
-    api deps.navigation.fragment
-    api deps.navigation.ui
+    api libs.kotlinx.coroutines.core
+    api libs.androidx.lifecycle.viewmodel
+    api libs.androidx.lifecycle.livedata
+    api libs.androidx.lifecycle.runtime
+    api libs.androidx.navigation.fragment
+    api libs.androidx.navigation.ui
 }

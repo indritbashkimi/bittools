@@ -33,9 +33,9 @@ android {
 }
 
 dependencies {
-    testImplementation deps.test.junit
-    androidTestImplementation deps.test.runner
-    androidTestImplementation deps.test.espresso.core
+    testImplementation libs.junit4
+    androidTestImplementation libs.androidx.test.runner
+    androidTestImplementation libs.androidx.test.espresso.core
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':shared')
 }
