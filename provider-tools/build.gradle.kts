@@ -8,18 +8,18 @@ plugins {
 
 android {
     namespace = "com.ibashkimi.providerstools"
-    compileSdk = versions.android.compileSdk
-    buildToolsVersion(versions.android.buildTools)
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    buildToolsVersion = libs.versions.android.buildTools.get()
     defaultConfig {
-        minSdk = versions.android.minSdk
-        targetSdk = versions.android.targetSdk
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
     }
     buildFeatures {
         viewBinding = true
     }
     buildTypes {
-        release {
-            minifyEnabled false
+        named("release") {
+            isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
@@ -27,7 +27,7 @@ android {
     }
 
     repositories {
-        maven { url = "https://jitpack.io" }
+        maven { url = uri("https://jitpack.io") }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    implementation(project(':provider'))
+    implementation(project(":provider"))
     implementation(project(":shared"))
     implementation(project(":theme"))
 

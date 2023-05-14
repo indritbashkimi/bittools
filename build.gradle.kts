@@ -1,14 +1,4 @@
 buildscript {
-    ext {
-        versions = [
-                android: [
-                        compileSdk: 33,
-                        buildTools: "33.0.2",
-                        minSdk    : 21,
-                        targetSdk : 33
-                ]
-        ]
-    }
     repositories {
         google()
         mavenCentral()
@@ -28,6 +18,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+tasks.register("clean", Delete::class) {
+    delete(rootProject.buildDir)
 }

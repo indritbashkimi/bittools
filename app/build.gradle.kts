@@ -8,33 +8,33 @@ plugins {
 
 android {
     namespace = "com.ibashkimi.bittools"
-    compileSdk = versions.android.compileSdk
-    buildToolsVersion(versions.android.buildTools)
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    buildToolsVersion = libs.versions.android.buildTools.get()
     defaultConfig {
         applicationId = "com.ibashkimi.bittools"
-        minSdk = versions.android.minSdk
-        targetSdk = versions.android.targetSdk
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 21
         versionName = "1.5.0"
-        resourceConfigurations += ["en", "it", "sq"]
+        resourceConfigurations += listOf("en", "it", "sq")
     }
     buildTypes {
-        debug {
+        named("debug") {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-dev"
         }
-        release {
+        named("release") {
             /*lintOptions {
                 disable 'MissingTranslation'
             }*/
-            minifyEnabled true
-            shrinkResources true
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
 
     repositories {
-        maven { url = "https://jitpack.io" }
+        maven { url = uri("https://jitpack.io") }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
