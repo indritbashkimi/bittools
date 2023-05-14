@@ -1,20 +1,17 @@
 package com.ibashkimi.bittools.home
 
-import android.app.Application
-import android.content.Context
 import android.content.SharedPreferences
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.ibashkimi.bittools.R
-import com.ibashkimi.shared.PreferenceHelper
 import com.ibashkimi.shared.Tool
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class HomeViewModel(app: Application) : AndroidViewModel(app) {
-
-    private val context: Context = getApplication()
-
-    private val preferences: SharedPreferences =
-        context.getSharedPreferences(PreferenceHelper.PREFERENCES_NAME, Context.MODE_PRIVATE)
+@HiltViewModel
+class HomeViewModel @Inject constructor(
+    private val preferences: SharedPreferences
+) : ViewModel() {
 
     val tools = MutableLiveData<Pair<List<Item>, List<Item>>>()
 

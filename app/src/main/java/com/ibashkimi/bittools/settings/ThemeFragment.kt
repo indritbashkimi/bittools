@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ibashkimi.bittools.R
 import com.ibashkimi.theme.preference.ThemeAdapter
 import com.ibashkimi.theme.theme.Theme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ThemeFragment : Fragment(), ThemeAdapter.ThemeSelectedListener {
 
     private lateinit var themeAdapter: ThemeAdapter

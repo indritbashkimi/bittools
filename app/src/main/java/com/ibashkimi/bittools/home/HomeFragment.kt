@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.ibashkimi.bittools.R
 import com.ibashkimi.shared.Tool
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment(), ItemAdapter.ClickListener {
 
     private val viewModel: HomeViewModel by viewModels()

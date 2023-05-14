@@ -19,6 +19,9 @@ androidx-percentlayout = "1.0.0"
 androidx-preference = "1.2.0"
 androidx-recyclerview = "1.3.0"
 
+dagger = "2.46.1"
+hilt = "1.0.0"
+
 googleMaterial = "1.9.0"
 
 kotlin = "1.8.21"
@@ -42,6 +45,7 @@ android-application = { id = "com.android.application", version.ref = "androidGr
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 android-lint = { id = "com.android.lint", version.ref = "androidGradlePlugin" }
 android-test = { id = "com.android.test", version.ref = "androidGradlePlugin" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
@@ -50,6 +54,7 @@ navigationSafeArgs = { id = "androidx.navigation.safeargs.kotlin", version.ref =
 
 [libraries]
 gradle-plugin-android = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
+gradle-plugin-hilt-android = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger" }
 gradle-plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 gradle-plugin-navigationSafeArgs = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "androidx-navigation" }
 
@@ -83,7 +88,18 @@ androidx-test-runner = { module = "androidx.test:runner", version.ref = "test-ru
 androidx-test-rules = { module = "androidx.test:rules", version.ref = "test-rules" }
 androidx-test-truth = { module = "androidx.test.ext:truth", version.ref = "test-ext-truth" }
 
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "hilt" }
+dagger-dagger = { module = "com.google.dagger:dagger", version.ref = "hilt" }
+
 google-material = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
+
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger" }
+hilt-core = { module = "com.google.dagger:hilt-core", version.ref = "dagger" }
+hilt-coreCompiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger" }
+hilt-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger" }
+hilt-navigationCompose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt" }
+hilt-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "dagger" }
 
 junit4 = { module = "junit:junit", version.ref = "junit4" }
 

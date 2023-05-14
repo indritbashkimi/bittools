@@ -8,24 +8,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ibashkimi.providerstools.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProviderSettingsFragment : Fragment() {
 
-    private val args: ProviderSettingsFragmentArgs by navArgs()
-
-    val viewModel: ProviderSettingsViewModel by viewModels(
-        ownerProducer = { this },
-        factoryProducer = {
-            ProviderSettingsViewModelFactory(
-                requireActivity().application,
-                args.tool
-            )
-        }
-    )
+    val viewModel: ProviderSettingsViewModel by viewModels()
 
     private lateinit var adapter: WidgetAdapter
 

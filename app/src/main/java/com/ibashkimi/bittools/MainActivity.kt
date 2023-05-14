@@ -18,8 +18,10 @@ import com.ibashkimi.theme.activity.applyNightMode
 import com.ibashkimi.theme.activity.applyTheme
 import com.ibashkimi.theme.theme.Theme
 import com.ibashkimi.theme.utils.StyleUtils
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener,
     NavController.OnDestinationChangedListener {
 

@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-parcelize")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs")
 }
 
@@ -50,8 +51,11 @@ dependencies {
     implementation(libs.androidx.percentlayout)
     implementation(libs.google.material)
     implementation("com.github.PhilJay:MPAndroidChart:3.1.0")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.test.runner)
     androidTestImplementation(libs.androidx.test.espresso.core)
+    kaptAndroidTest(libs.hilt.compiler)
 }

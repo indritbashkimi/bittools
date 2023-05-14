@@ -8,8 +8,10 @@ import androidx.preference.PreferenceFragmentCompat
 import com.ibashkimi.bittools.R
 import com.ibashkimi.shared.PreferenceHelper
 import com.ibashkimi.shared.Tool
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 
+@AndroidEntryPoint
 class PrefsFragment : PreferenceFragmentCompat(),
     SharedPreferences.OnSharedPreferenceChangeListener {
 

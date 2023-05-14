@@ -1,19 +1,21 @@
 package com.ibashkimi.bittools.settings
 
-import android.app.Application
 import android.content.Context
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.ibashkimi.shared.PreferenceHelper
 import com.ibashkimi.theme.preference.DecodedTheme
 import com.ibashkimi.theme.preference.decodeTheme
 import com.ibashkimi.theme.theme.Theme
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class ThemeViewModel(app: Application) : AndroidViewModel(app) {
-
-    private val preferences = PreferenceHelper(getApplication())
+@HiltViewModel
+class ThemeViewModel @Inject constructor(
+    private val preferences: PreferenceHelper
+) : ViewModel() {
 
     private val themes: Array<Theme> = arrayOf(
         Theme.RED_BLUE, Theme.RED_TEAL, Theme.PINK_BLUE, Theme.PINK_LIME, Theme.PURPLE_RED,

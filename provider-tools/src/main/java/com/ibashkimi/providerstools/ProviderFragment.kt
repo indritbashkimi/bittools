@@ -22,7 +22,9 @@ import com.ibashkimi.providerstools.data.ToolPreferenceHelper
 import com.ibashkimi.providerstools.data.allSupportedUnits
 import com.ibashkimi.providerstools.data.helper
 import com.ibashkimi.providerstools.data.title
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProviderFragment : Fragment() {
 
     private val args: ProviderFragmentArgs by navArgs()

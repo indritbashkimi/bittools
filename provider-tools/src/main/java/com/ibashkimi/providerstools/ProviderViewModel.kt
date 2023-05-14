@@ -2,9 +2,9 @@ package com.ibashkimi.providerstools
 
 import android.app.Application
 import android.content.Context
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
 import androidx.lifecycle.switchMap
 import com.ibashkimi.provider.factories.ProviderFactory
@@ -15,8 +15,11 @@ import com.ibashkimi.providerstools.data.dataProcessor
 import com.ibashkimi.providerstools.data.helper
 import com.ibashkimi.providerstools.data.providerType
 import com.ibashkimi.shared.Tool
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class ProviderViewModel(app: Application) : AndroidViewModel(app) {
+@HiltViewModel
+class ProviderViewModel @Inject constructor(private val application: Application) : ViewModel() {
 
     private val _tool = MutableLiveData<Tool>()
 
@@ -52,8 +55,8 @@ class ProviderViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     private fun getProviderLiveData(tool: Tool): SensorLiveData {
-        val context: Context = getApplication()
-        val preferenceHelper = tool.helper(getApplication())
+        val context: Context = application
+        val preferenceHelper = tool.helper(application)
         val samplingRate = preferenceHelper.providerSamplingRate
         return ProviderFactory.getLiveData(context, tool.providerType, samplingRate)
     }

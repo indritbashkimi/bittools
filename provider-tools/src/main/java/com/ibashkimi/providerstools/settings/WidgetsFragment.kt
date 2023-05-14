@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ibashkimi.providerstools.R
 import com.ibashkimi.providerstools.data.Gauges
 import com.ibashkimi.providerstools.data.WidgetItem
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WidgetsFragment : Fragment() {
 
     private lateinit var viewModel: ProviderSettingsViewModel
