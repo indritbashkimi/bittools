@@ -2,7 +2,7 @@ package com.ibashkimi.providerstools.settings
 
 import android.content.Context
 import android.graphics.Color
-import android.util.DisplayMetrics
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -95,10 +95,11 @@ class WidgetAdapter(
         return selectedHolder?.id
     }
 
-    private fun Int.toPx(): Int {
-        val displayMetrics = context.resources.displayMetrics
-        return (this * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt()
-    }
+    private fun Int.toPx(): Int = TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        this.toFloat(),
+        context.resources.displayMetrics
+    ).roundToInt()
 
     inner class ThemeViewHolder(root: View) : RecyclerView.ViewHolder(root) {
         private val card = itemView.findViewById<MaterialCardView>(R.id.card_view)
