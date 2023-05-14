@@ -4,7 +4,6 @@ import android.content.Context
 import android.hardware.SensorEvent
 import com.ibashkimi.provider.providerdata.ThreeDimensionalData
 
-
 open class NaiveAndroidProvider(
     context: Context,
     sensors: IntArray,

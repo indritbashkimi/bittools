@@ -6,7 +6,6 @@ import com.ibashkimi.theme.activity.applyNavBarColor
 import com.ibashkimi.theme.activity.applyNightMode
 import com.ibashkimi.theme.activity.applyTheme
 
-
 abstract class BitToolsActivity : AppCompatActivity() {
 
     open val preferences: PreferenceHelper by lazy {

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
@@ -13,9 +12,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:gravity="center_horizontal|bottom"
+        android:text="80"
         android:textAppearance="?textAppearanceHeadline3"
-        android:textColor="?android:attr/textColorPrimary"
-        android:text="80" />
+        android:textColor="?android:attr/textColorPrimary" />
 
     <TextView
         android:id="@+id/unit"
@@ -24,8 +23,8 @@
         android:layout_gravity="bottom"
         android:gravity="start|bottom"
         android:paddingBottom="8dp"
+        android:text="db"
         android:textAppearance="?textAppearanceSubtitle2"
-        android:textColor="?colorControlNormal"
-        android:text="db" />
+        android:textColor="?colorControlNormal" />
 
 </LinearLayout>

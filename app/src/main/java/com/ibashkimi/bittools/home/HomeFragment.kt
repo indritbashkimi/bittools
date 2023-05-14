@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -50,11 +49,11 @@ class HomeFragment : Fragment(), ItemAdapter.ClickListener {
         recyclerView.layoutManager = layoutManager
         adapter = ItemAdapter(emptyList(), emptyList(), itemLayout, this)
         recyclerView.adapter = adapter
-        viewModel.tools.observe(viewLifecycleOwner, Observer {
+        viewModel.tools.observe(viewLifecycleOwner) {
             adapter.tools = it.first
             adapter.unsupportedTools = it.second
             adapter.notifyDataSetChanged()
-        })
+        }
 
         return rootView
     }

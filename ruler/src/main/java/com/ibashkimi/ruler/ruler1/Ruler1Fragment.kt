@@ -10,7 +10,6 @@ import androidx.navigation.findNavController
 import androidx.preference.PreferenceManager
 import com.ibashkimi.ruler.R
 
-
 class Ruler1Fragment : Fragment() {
     private lateinit var overlay: Ruler1Overlay
 

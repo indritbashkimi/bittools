@@ -14,7 +14,6 @@ import com.ibashkimi.providerstools.data.WidgetItem
 import com.ibashkimi.theme.utils.StyleUtils
 import kotlin.math.roundToInt
 
-
 class WidgetAdapter(
     private val context: Context,
     private val items: List<WidgetItem>,

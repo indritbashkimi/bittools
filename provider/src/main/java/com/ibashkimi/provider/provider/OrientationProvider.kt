@@ -57,9 +57,11 @@ class OrientationProvider(
                     accelerometerReading.size
                 )
             }
+
             Sensor.TYPE_MAGNETIC_FIELD -> {
                 System.arraycopy(event.values, 0, magnetometerReading, 0, magnetometerReading.size)
             }
+
             else -> return
         }
 
@@ -81,18 +83,22 @@ class OrientationProvider(
                     axisX = SensorManager.AXIS_X
                     axisY = SensorManager.AXIS_Y
                 }
+
                 Surface.ROTATION_90 -> {
                     axisX = SensorManager.AXIS_Y
                     axisY = SensorManager.AXIS_MINUS_X
                 }
+
                 Surface.ROTATION_180 -> {
                     axisX = SensorManager.AXIS_MINUS_X
                     axisY = SensorManager.AXIS_MINUS_Y
                 }
+
                 Surface.ROTATION_270 -> {
                     axisX = SensorManager.AXIS_MINUS_Y
                     axisY = SensorManager.AXIS_X
                 }
+
                 else -> return
             }
 

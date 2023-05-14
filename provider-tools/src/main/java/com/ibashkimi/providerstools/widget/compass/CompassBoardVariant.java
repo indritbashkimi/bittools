@@ -16,13 +16,12 @@ import androidx.annotation.Nullable;
 
 import com.ibashkimi.provider.providerdata.OrientationData;
 import com.ibashkimi.provider.providerdata.SensorData;
+import com.ibashkimi.providerstools.R;
 import com.ibashkimi.providerstools.data.DisplayParams;
 import com.ibashkimi.providerstools.data.ProviderDisplay;
-import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.StyleUtils;
 
 import org.jetbrains.annotations.NotNull;
-
 
 public class CompassBoardVariant extends View implements ProviderDisplay {
     protected float direction;

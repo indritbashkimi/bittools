@@ -5,7 +5,6 @@ import com.ibashkimi.theme.theme.NavBarColor
 import com.ibashkimi.theme.theme.NightMode
 import com.ibashkimi.theme.theme.Theme
 
-
 interface ThemeSupportPreferences {
 
     fun getNightMode(defaultValue: NightMode): NightMode

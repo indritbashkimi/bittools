@@ -4,7 +4,6 @@ import android.content.Context
 import android.location.Location
 import com.ibashkimi.provider.providerdata.UnidimensionalData
 
-
 class AltimeterProvider(
     context: Context,
     minTime: Int,

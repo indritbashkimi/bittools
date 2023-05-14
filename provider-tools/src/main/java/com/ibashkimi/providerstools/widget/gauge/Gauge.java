@@ -7,7 +7,6 @@ import android.widget.FrameLayout;
 
 import com.ibashkimi.providerstools.R;
 
-
 public class Gauge extends FrameLayout {
 
     protected GaugeBoard mBoard;

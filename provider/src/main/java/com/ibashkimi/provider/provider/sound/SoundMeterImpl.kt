@@ -4,7 +4,6 @@ import android.media.MediaRecorder
 import android.util.Log
 import java.io.IOException
 
-
 class SoundMeterImpl : SoundMeter, MediaRecorder.OnErrorListener {
 
     private val recorder = MediaRecorder()

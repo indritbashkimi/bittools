@@ -32,37 +32,44 @@ class HomeViewModel(app: Application) : AndroidViewModel(app) {
                         R.drawable.ic_accelerometer,
                         Tool.ACCELEROMETER
                     )
+
                     Tool.BAROMETER -> Item(
                         R.string.barometer_title,
                         R.drawable.ic_gauge,
                         Tool.BAROMETER
                     )
+
                     Tool.COMPASS -> Item(
                         R.string.compass_title,
                         R.drawable.ic_compass,
                         Tool.COMPASS
                     )
+
                     Tool.HYGROMETER -> Item(
                         R.string.hygrometer_title,
                         R.drawable.ic_hygrometer,
                         Tool.HYGROMETER
                     )
+
                     Tool.LEVEL -> Item(R.string.level_title, R.drawable.ic_level, Tool.LEVEL)
                     Tool.LIGHT -> Item(
                         R.string.light_meter_title,
                         R.drawable.ic_light_meter,
                         Tool.LIGHT
                     )
+
                     Tool.MAGNETOMETER -> Item(
                         R.string.magnetometer_title,
                         R.drawable.ic_magnetometer,
                         Tool.MAGNETOMETER
                     )
+
                     Tool.PROTRACTOR -> Item(
                         R.string.protractor,
                         R.drawable.ic_protractor,
                         Tool.PROTRACTOR
                     )
+
                     Tool.RULER -> Item(R.string.ruler_title, R.drawable.ic_ruler, Tool.RULER)
                     Tool.THERMOMETER -> Item(
                         R.string.thermometer_title,

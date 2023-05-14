@@ -15,7 +15,6 @@ import androidx.annotation.ColorInt;
 import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.StyleUtils;
 
-
 public class CompassBoard extends View {
     protected String[] mDirections;
     @ColorInt

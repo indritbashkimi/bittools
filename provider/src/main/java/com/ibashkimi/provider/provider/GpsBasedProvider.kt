@@ -9,7 +9,6 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
 
-
 abstract class GpsBasedProvider(context: Context, private var minTime: Int) :
     AbstractProvider(), LocationListener {
 

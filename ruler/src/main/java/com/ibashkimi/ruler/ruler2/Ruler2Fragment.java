@@ -1,5 +1,7 @@
 package com.ibashkimi.ruler.ruler2;
 
+import static androidx.navigation.fragment.FragmentKt.findNavController;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -13,8 +15,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.ibashkimi.ruler.R;
-
-import static androidx.navigation.fragment.FragmentKt.findNavController;
 
 public class Ruler2Fragment extends Fragment {
     private static final String PREF_RULER2_CIRCLE1_X = "pref_ruler2_circle1_x";

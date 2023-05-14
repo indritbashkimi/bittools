@@ -8,8 +8,7 @@ import androidx.preference.PreferenceFragmentCompat
 import com.ibashkimi.bittools.R
 import com.ibashkimi.shared.PreferenceHelper
 import com.ibashkimi.shared.Tool
-import java.util.*
-
+import java.util.Locale
 
 class PrefsFragment : PreferenceFragmentCompat(),
     SharedPreferences.OnSharedPreferenceChangeListener {
@@ -64,34 +63,42 @@ class PrefsFragment : PreferenceFragmentCompat(),
                 findNavController().navigate(R.id.action_settings_to_themeSelector)
                 return true
             }
+
             "accelerometer" -> {
                 launchToolSettings(Tool.ACCELEROMETER)
                 return true
             }
+
             "barometer" -> {
                 launchToolSettings(Tool.BAROMETER)
                 return true
             }
+
             "compass" -> {
                 launchToolSettings(Tool.COMPASS)
                 return true
             }
+
             "hygrometer" -> {
                 launchToolSettings(Tool.HYGROMETER)
                 return true
             }
+
             "level" -> {
                 launchToolSettings(Tool.LEVEL)
                 return true
             }
+
             "light" -> {
                 launchToolSettings(Tool.LIGHT)
                 return true
             }
+
             "magnetometer" -> {
                 launchToolSettings(Tool.MAGNETOMETER)
                 return true
             }
+
             "thermometer" -> {
                 launchToolSettings(Tool.THERMOMETER)
                 return true

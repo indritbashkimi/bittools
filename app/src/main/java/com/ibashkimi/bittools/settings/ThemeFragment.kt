@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,11 +41,11 @@ class ThemeFragment : Fragment(), ThemeAdapter.ThemeSelectedListener {
             themeAdapter = ThemeAdapter(context, emptyList(), -1, { false }, this@ThemeFragment)
             adapter = themeAdapter
         }
-        viewModel.themes(root.context).observe(viewLifecycleOwner, Observer {
+        viewModel.themes(root.context).observe(viewLifecycleOwner) {
             themeAdapter.themes = it.first
             themeAdapter.selectedIndex = it.second
             themeAdapter.notifyDataSetChanged()
-        })
+        }
 
         return root
     }

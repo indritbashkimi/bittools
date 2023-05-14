@@ -3,9 +3,19 @@ package com.ibashkimi.provider.livedata
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import com.ibashkimi.provider.factories.ProviderFactory
-import com.ibashkimi.provider.provider.Provider
 import com.ibashkimi.provider.provider.ProviderListener
-import com.ibashkimi.provider.provider.ProviderType.*
+import com.ibashkimi.provider.provider.ProviderType.TYPE_ACCELEROMETER
+import com.ibashkimi.provider.provider.ProviderType.TYPE_ALTIMETER
+import com.ibashkimi.provider.provider.ProviderType.TYPE_BAROMETER
+import com.ibashkimi.provider.provider.ProviderType.TYPE_COMPASS
+import com.ibashkimi.provider.provider.ProviderType.TYPE_HYGROMETER
+import com.ibashkimi.provider.provider.ProviderType.TYPE_LEVEL
+import com.ibashkimi.provider.provider.ProviderType.TYPE_LIGHT_METER
+import com.ibashkimi.provider.provider.ProviderType.TYPE_MAGNETOMETER
+import com.ibashkimi.provider.provider.ProviderType.TYPE_ORIENTATION
+import com.ibashkimi.provider.provider.ProviderType.TYPE_SOUND_LEVEL_METER
+import com.ibashkimi.provider.provider.ProviderType.TYPE_SPEED_METER
+import com.ibashkimi.provider.provider.ProviderType.TYPE_THERMOMETER
 import com.ibashkimi.provider.providerdata.SensorData
 
 class SensorLiveData(

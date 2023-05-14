@@ -7,7 +7,6 @@ import com.ibashkimi.provider.providerdata.ThreeDimensionalData
 import kotlin.math.abs
 import kotlin.math.sqrt
 
-
 class AccelerationProvider(
     context: Context,
     sensors: IntArray,

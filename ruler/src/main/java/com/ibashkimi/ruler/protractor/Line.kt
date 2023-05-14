@@ -2,7 +2,6 @@ package com.ibashkimi.ruler.protractor
 
 import kotlin.math.asin
 
-
 data class Line(var sin: Float = 0f, var cos: Float = 0f) {
     val angle: Float
         get() {

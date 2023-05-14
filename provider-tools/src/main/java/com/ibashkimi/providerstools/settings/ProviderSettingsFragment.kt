@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -59,14 +58,14 @@ class ProviderSettingsFragment : Fragment() {
         adapter.listener = WidgetAdapterListener { viewModel.onLayoutSelected(it) }
         recyclerView.adapter = adapter
 
-        viewModel.layoutLiveData.observe(viewLifecycleOwner, Observer {
+        viewModel.layoutLiveData.observe(viewLifecycleOwner) {
             childFragmentManager.beginTransaction()
                 .replace(
                     R.id.sections_container,
                     WidgetsFragment.newInstance(it.id), it.id
                 )
                 .commit()
-        })
+        }
 
         return root
     }

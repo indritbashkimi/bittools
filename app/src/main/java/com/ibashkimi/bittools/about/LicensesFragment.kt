@@ -18,7 +18,6 @@ import com.ibashkimi.bittools.R
 import com.ibashkimi.theme.utils.StyleUtils
 import java.security.InvalidParameterException
 
-
 class LicensesFragment : Fragment() {
 
     private val myTitle: Int = R.string.licences_title
@@ -73,6 +72,7 @@ class LicensesFragment : Fragment() {
                     LayoutInflater.from(parent.context)
                         .inflate(R.layout.about_lib_intro, parent, false)
                 )
+
                 VIEW_TYPE_LIBRARY -> return createLibraryHolder(parent)
             }
             throw InvalidParameterException()

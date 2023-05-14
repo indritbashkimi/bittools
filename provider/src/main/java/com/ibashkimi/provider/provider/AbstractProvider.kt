@@ -3,8 +3,6 @@ package com.ibashkimi.provider.provider
 import android.util.Log
 import androidx.annotation.CallSuper
 import com.ibashkimi.provider.providerdata.SensorData
-import java.util.*
-
 
 abstract class AbstractProvider : Provider {
 

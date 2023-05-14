@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.ibashkimi.ruler.R
 
-
 class ProtractorFragment : Fragment() {
 
     private lateinit var protractor: Protractor

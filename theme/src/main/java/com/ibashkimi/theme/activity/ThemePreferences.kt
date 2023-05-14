@@ -5,8 +5,9 @@ import com.ibashkimi.theme.theme.NavBarColor
 import com.ibashkimi.theme.theme.NightMode
 import com.ibashkimi.theme.theme.Theme
 
-
-open class ThemePreferences(private val sharedPreferences: SharedPreferences) : ThemeSupportPreferences {
+open class ThemePreferences(
+    private val sharedPreferences: SharedPreferences
+) : ThemeSupportPreferences {
 
     companion object {
 
@@ -43,7 +44,8 @@ open class ThemePreferences(private val sharedPreferences: SharedPreferences) : 
 
     override fun getNavBarColor(defaultNavBarColor: NavBarColor): NavBarColor {
         return navBarFromPref(
-                sharedPreferences.getString(KEY_NAV_BAR_COLOR, defaultNavBarColor.value)!!)
+            sharedPreferences.getString(KEY_NAV_BAR_COLOR, defaultNavBarColor.value)!!
+        )
     }
 
     private fun navBarFromPref(value: String): NavBarColor {

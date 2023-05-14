@@ -12,7 +12,6 @@ import android.view.View;
 
 import com.ibashkimi.theme.utils.StyleUtils;
 
-
 public class Ruler2Board extends View {
     private float H1;
     private float H2;

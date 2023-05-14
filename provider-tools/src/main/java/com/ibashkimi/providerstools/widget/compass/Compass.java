@@ -13,12 +13,11 @@ import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.OrientationData;
 import com.ibashkimi.provider.providerdata.SensorData;
+import com.ibashkimi.providerstools.R;
 import com.ibashkimi.providerstools.data.DisplayParams;
 import com.ibashkimi.providerstools.data.ProviderDisplay;
-import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.MathUtils;
 import com.ibashkimi.theme.utils.StyleUtils;
-
 
 public class Compass extends FrameLayout implements ProviderDisplay {
 

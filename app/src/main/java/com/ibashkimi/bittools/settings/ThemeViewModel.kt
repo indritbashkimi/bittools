@@ -31,9 +31,10 @@ class ThemeViewModel(app: Application) : AndroidViewModel(app) {
         preferences.theme = theme
     }
 
-    fun themes(context: Context): LiveData<Pair<List<DecodedTheme>, Int>> = liveData(Dispatchers.IO) {
-        val decodedThemes = themes.map { decodeTheme(context, it) }
-        val selectedThemeIndex = themes.indexOf(preferences.theme)
-        emit(Pair(decodedThemes, selectedThemeIndex))
-    }
+    fun themes(context: Context): LiveData<Pair<List<DecodedTheme>, Int>> =
+        liveData(Dispatchers.IO) {
+            val decodedThemes = themes.map { decodeTheme(context, it) }
+            val selectedThemeIndex = themes.indexOf(preferences.theme)
+            emit(Pair(decodedThemes, selectedThemeIndex))
+        }
 }

@@ -5,7 +5,6 @@ import android.hardware.SensorEvent
 import com.ibashkimi.provider.filter.Filter
 import com.ibashkimi.provider.providerdata.UnidimensionalData
 
-
 open class SimpleAndroidProvider(
     context: Context,
     sensors: IntArray,

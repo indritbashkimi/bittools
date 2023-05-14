@@ -16,7 +16,6 @@ import com.ibashkimi.ruler.R;
 import com.ibashkimi.theme.utils.MathUtils;
 import com.ibashkimi.theme.utils.StyleUtils;
 
-
 public class ProtractorOverlay extends View implements View.OnTouchListener {
     private static final float ANGLE_DISTANCE = 20;
     private Paint mFirstLinePaint;

@@ -14,7 +14,6 @@ import com.ibashkimi.theme.R
 import com.ibashkimi.theme.theme.Theme
 import kotlin.math.roundToInt
 
-
 @Suppress("unused")
 class ThemeAdapter(
     val context: Context,

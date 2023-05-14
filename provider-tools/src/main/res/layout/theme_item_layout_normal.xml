@@ -8,13 +8,13 @@
     tools:layout_width="match_parent">
 
     <TextView
+        style="?appBarLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="?colorPrimary"
         android:gravity="center|bottom"
         android:text="@string/section_n_2"
-        android:textAppearance="?textAppearanceBody1"
-        style="?appBarLayoutStyle" />
+        android:textAppearance="?textAppearanceBody1" />
 
     <TextView
         android:layout_width="match_parent"

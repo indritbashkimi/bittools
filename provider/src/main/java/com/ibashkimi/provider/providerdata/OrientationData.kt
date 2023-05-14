@@ -1,6 +1,5 @@
 package com.ibashkimi.provider.providerdata
 
-
 class OrientationData(azimuth: Double = 0.0, pitch: Double = 0.0, roll: Double = 0.0) :
     SensorData(doubleArrayOf(azimuth, pitch, roll)) {
 

@@ -1,6 +1,5 @@
 package com.ibashkimi.provider.utils;
 
-
 public class PatternCreator {
 
     public static float[] createFloat(float begin, float end, int step) {

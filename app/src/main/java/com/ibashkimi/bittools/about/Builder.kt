@@ -4,7 +4,6 @@ import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-
 data class About(
     @StringRes val title: Int,
     val version: String,
@@ -12,7 +11,11 @@ data class About(
     val sections: List<Section>
 )
 
-class Item(@StringRes val title: Int, @DrawableRes val icon: Int, val onClick: View.OnClickListener?)
+class Item(
+    @StringRes val title: Int,
+    @DrawableRes val icon: Int,
+    val onClick: View.OnClickListener?
+)
 
 class Section(val title: Int, val items: List<Item>)
 

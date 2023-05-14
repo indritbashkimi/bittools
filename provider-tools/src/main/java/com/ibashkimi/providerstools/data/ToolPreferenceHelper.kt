@@ -12,7 +12,7 @@ import com.ibashkimi.provider.unitconverter.hpaToAtm
 import com.ibashkimi.provider.unitconverter.hpaToTorr
 import com.ibashkimi.providerstools.R
 import com.ibashkimi.shared.Tool
-import java.util.*
+import java.util.Locale
 
 class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: SharedPreferences) {
 
@@ -31,6 +31,7 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                     Gauges.STYLE_GAUGE_3
                 )
             }
+
             Tool.BAROMETER -> {
                 save(
                     Layouts.LAYOUT_SIMPLE,
@@ -39,6 +40,7 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                     Gauges.STYLE_CHART_2
                 )
             }
+
             Tool.COMPASS -> {
                 save(
                     Layouts.LAYOUT_SIMPLE,
@@ -47,6 +49,7 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                     Gauges.STYLE_COMPASS_2
                 )
             }
+
             Tool.HYGROMETER -> {
                 save(
                     Layouts.LAYOUT_SIMPLE,
@@ -55,6 +58,7 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                     Gauges.STYLE_CHART_2
                 )
             }
+
             Tool.LEVEL -> {
                 save(
                     Layouts.LAYOUT_NORMAL,
@@ -63,6 +67,7 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                     Gauges.STYLE_LEVEL_1
                 )
             }
+
             Tool.LIGHT -> {
                 save(
                     Layouts.LAYOUT_SIMPLE,
@@ -71,6 +76,7 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                     Gauges.STYLE_CHART_2
                 )
             }
+
             Tool.MAGNETOMETER -> {
                 save(
                     Layouts.LAYOUT_SIMPLE,
@@ -79,6 +85,7 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                     Gauges.STYLE_CHART_2
                 )
             }
+
             Tool.THERMOMETER -> {
                 save(
                     Layouts.LAYOUT_SIMPLE,
@@ -87,6 +94,7 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                     Gauges.STYLE_CHART_2
                 )
             }
+
             else -> throw IllegalArgumentException("${tool.name} is not a provider tool")
         }
     }
@@ -137,34 +145,42 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                 decimalFormat = "#"
             )
                 .applyMeasurementUnit(context, measurementUnit)
+
             Tool.BAROMETER -> DisplayParams(
                 decimalFormat = "#"
             )
                 .applyMeasurementUnit(context, measurementUnit)
+
             Tool.COMPASS -> DisplayParams(
                 decimalFormat = "#"
             )
                 .applyMeasurementUnit(context, measurementUnit)
+
             Tool.HYGROMETER -> DisplayParams(
                 decimalFormat = "#.#"
             )
                 .applyMeasurementUnit(context, measurementUnit)
+
             Tool.LEVEL -> DisplayParams(
                 decimalFormat = "#.#"
             )
                 .applyMeasurementUnit(context, measurementUnit)
+
             Tool.LIGHT -> DisplayParams(
                 decimalFormat = "#"
             )
                 .applyMeasurementUnit(context, measurementUnit)
+
             Tool.MAGNETOMETER -> DisplayParams(
                 decimalFormat = "#"
             )
                 .applyMeasurementUnit(context, measurementUnit)
+
             Tool.THERMOMETER -> DisplayParams(
                 decimalFormat = "#.#"
             )
                 .applyMeasurementUnit(context, measurementUnit)
+
             else -> throw IllegalArgumentException("${tool.name} is not a provider tool")
         }
     }
@@ -178,42 +194,52 @@ class ToolPreferenceHelper(val tool: Tool, private val sharedPreferences: Shared
                 minValue = -20
                 maxValue = 100
             }
+
             MeasureUnit.FAHRENHEIT -> {
                 minValue = 0
                 maxValue = 200
             }
+
             MeasureUnit.KELVIN -> {
                 minValue = 250
                 maxValue = 350
             }
+
             MeasureUnit.H_PASCAL -> {
                 minValue = 950
                 maxValue = 1050
             }
+
             MeasureUnit.ATM -> {
                 minValue = 1
                 maxValue = 10
             }
+
             MeasureUnit.TORR -> {
                 minValue = 650
                 maxValue = 800
             }
+
             MeasureUnit.U_TESLA -> {
                 minValue = 0
                 maxValue = 1000
             }
+
             MeasureUnit.DEGREE -> {
                 minValue = 0
                 maxValue = 360
             }
+
             MeasureUnit.M_S_2 -> {
                 minValue = 0
                 maxValue = 100
             }
+
             MeasureUnit.LX -> {
                 minValue = 0
                 maxValue = 20000
             }
+
             MeasureUnit.PERCENT -> {
                 minValue = 0
                 maxValue = 100
@@ -288,6 +314,7 @@ val Tool.layoutMap: Map<String, Array<Section>>
                 Layouts.LAYOUT_NORMAL to arrayOf(section1, section2)
             )
         }
+
         Tool.HYGROMETER -> basicLayouts
         Tool.LEVEL -> {
             val section1 = Section(
@@ -305,6 +332,7 @@ val Tool.layoutMap: Map<String, Array<Section>>
                 Layouts.LAYOUT_NORMAL to arrayOf(section1, section2)
             )
         }
+
         Tool.LIGHT -> basicLayouts
         Tool.MAGNETOMETER -> basicLayouts
         Tool.THERMOMETER -> basicLayouts
@@ -393,6 +421,7 @@ val MeasureUnit.dataProcessor: DataProcessor?
                 }
             }
         }
+
         MeasureUnit.KELVIN -> {
             object : DataProcessor {
                 override fun process(data: SensorData): SensorData {
@@ -401,6 +430,7 @@ val MeasureUnit.dataProcessor: DataProcessor?
                 }
             }
         }
+
         MeasureUnit.H_PASCAL -> null
         MeasureUnit.ATM -> {
             object : DataProcessor {
@@ -410,6 +440,7 @@ val MeasureUnit.dataProcessor: DataProcessor?
                 }
             }
         }
+
         MeasureUnit.TORR -> {
             object : DataProcessor {
                 override fun process(data: SensorData): SensorData {
@@ -418,6 +449,7 @@ val MeasureUnit.dataProcessor: DataProcessor?
                 }
             }
         }
+
         MeasureUnit.M_S_2 -> null
         MeasureUnit.LX -> null
         MeasureUnit.DEGREE -> null

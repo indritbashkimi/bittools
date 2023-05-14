@@ -9,12 +9,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import androidx.annotation.ColorInt;
-import androidx.annotation.StyleRes;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Display;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.StyleRes;
 public class StyleUtils {
 
     @ColorInt

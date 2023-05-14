@@ -7,7 +7,6 @@ import com.ibashkimi.provider.filter.Filter
 import com.ibashkimi.provider.providerdata.UnidimensionalData
 import kotlin.math.sqrt
 
-
 class FilteredProvider(
     context: Context,
     sensors: IntArray,

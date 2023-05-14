@@ -4,7 +4,6 @@ import android.content.Context
 import android.location.Location
 import com.ibashkimi.provider.providerdata.UnidimensionalData
 
-
 class SpeedMeterProvider(
     context: Context,
     minTime: Int,

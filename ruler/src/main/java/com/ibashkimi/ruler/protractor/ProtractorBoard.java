@@ -12,7 +12,6 @@ import android.view.View;
 
 import com.ibashkimi.theme.utils.StyleUtils;
 
-
 public class ProtractorBoard extends View {
     protected Rect mMargins; // use RectF instead.
     protected Paint mPaint;

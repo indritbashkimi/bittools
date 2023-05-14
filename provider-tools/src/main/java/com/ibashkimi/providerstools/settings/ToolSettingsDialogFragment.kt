@@ -50,6 +50,7 @@ class ToolSettingsDialogFragment : BottomSheetDialogFragment() {
                         .show()
                     true
                 }
+
                 R.id.action_sampling -> {
                     MaterialAlertDialogBuilder(requireContext())
                         .setSingleChoiceItems(
@@ -66,12 +67,14 @@ class ToolSettingsDialogFragment : BottomSheetDialogFragment() {
                         .show()
                     true
                 }
+
                 R.id.action_settings -> {
                     findNavController().navigate(
                         ToolSettingsDialogFragmentDirections.actionToolSettingsToPersonalize(args.tool)
                     )
                     true
                 }
+
                 else -> super.onOptionsItemSelected(it)
             }
         }

@@ -9,14 +9,19 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ibashkimi.provider.providerdata.SensorData
-import com.ibashkimi.providerstools.data.*
+import com.ibashkimi.providerstools.data.Gauges
+import com.ibashkimi.providerstools.data.Layouts
+import com.ibashkimi.providerstools.data.ProviderDisplay
+import com.ibashkimi.providerstools.data.ToolPreferenceHelper
+import com.ibashkimi.providerstools.data.allSupportedUnits
+import com.ibashkimi.providerstools.data.helper
+import com.ibashkimi.providerstools.data.title
 
 class ProviderFragment : Fragment() {
 
@@ -55,13 +60,13 @@ class ProviderFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.measurementUnit.observe(viewLifecycleOwner, Observer {
+        viewModel.measurementUnit.observe(viewLifecycleOwner) {
             setUpDisplayParams()
-        })
+        }
         viewModel.setTool(args.tool, preferenceHelper.measurementUnit)
-        viewModel.sensorData.observe(viewLifecycleOwner, Observer {
+        viewModel.sensorData.observe(viewLifecycleOwner) {
             onDataChanged(it)
-        })
+        }
     }
 
     override fun onDestroyView() {
@@ -79,6 +84,7 @@ class ProviderFragment : Fragment() {
                 display1Container.addView(display1)
                 listOf(display1 as ProviderDisplay)
             }
+
             Layouts.LAYOUT_NORMAL -> {
                 val display1Container = rootView.findViewById<View>(R.id.container_1) as ViewGroup
                 val display1Layout = preferenceHelper.getWidgetLayout(Gauges.PREF_KEY_WIDGET_1)
@@ -97,6 +103,7 @@ class ProviderFragment : Fragment() {
 
                 listOf(display1 as ProviderDisplay, display2 as ProviderDisplay)
             }
+
             Layouts.LAYOUT_RICH -> {
                 val display1Container = rootView.findViewById<View>(R.id.container_1) as ViewGroup
                 val display1Layout = preferenceHelper.getWidgetLayout(Gauges.PREF_KEY_WIDGET_1)
@@ -139,6 +146,7 @@ class ProviderFragment : Fragment() {
                     display3 as ProviderDisplay
                 )
             }
+
             else -> throw IllegalArgumentException("Unknown layout $layoutType.")
         }
     }
@@ -159,16 +167,19 @@ class ProviderFragment : Fragment() {
                     showMeasurementUnitOptions()
                     true
                 }
+
                 R.id.action_sampling -> {
                     showSamplingRateOptions()
                     true
                 }
+
                 R.id.action_settings -> {
                     findNavController().navigate(
                         ProviderFragmentDirections.actionProviderFragmentToProviderSettings(tool)
                     )
                     true
                 }
+
                 else -> super.onOptionsItemSelected(it)
             }
         }

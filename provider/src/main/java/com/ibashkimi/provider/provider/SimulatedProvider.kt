@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.withContext
 
-
 class SimulatedProvider(
     private val values: FloatArray,
     private val delay: Long,

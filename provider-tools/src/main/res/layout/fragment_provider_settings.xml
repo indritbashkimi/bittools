@@ -19,8 +19,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
-                android:paddingTop="16dp"
                 android:paddingStart="?listPreferredItemPaddingStart"
+                android:paddingTop="16dp"
                 android:paddingEnd="?listPreferredItemPaddingEnd"
                 android:text="@string/pref_layout_title"
                 android:textAppearance="?textAppearanceSubtitle2" />

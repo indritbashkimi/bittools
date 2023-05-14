@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.onEach
 import java.io.IOException
 import kotlin.math.log10
 
-
 class SoundLevelProvider(
     private val delayMillis: Long,
     private val filter: Filter,

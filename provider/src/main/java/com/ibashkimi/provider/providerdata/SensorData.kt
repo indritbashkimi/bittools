@@ -1,6 +1,5 @@
 package com.ibashkimi.provider.providerdata
 
-
 abstract class SensorData(val values: DoubleArray) {
 
     abstract val module: Double

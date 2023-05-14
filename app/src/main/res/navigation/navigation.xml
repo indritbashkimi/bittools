@@ -101,7 +101,7 @@
     <fragment
         android:id="@+id/themeSelector"
         android:name="com.ibashkimi.bittools.settings.ThemeFragment"
-        android:label="@string/title_change_theme"/>
+        android:label="@string/title_change_theme" />
 
     <include app:graph="@navigation/provider_graph" />
 

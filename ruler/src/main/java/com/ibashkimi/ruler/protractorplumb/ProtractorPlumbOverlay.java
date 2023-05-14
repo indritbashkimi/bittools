@@ -14,7 +14,6 @@ import com.ibashkimi.ruler.R;
 import com.ibashkimi.theme.utils.MathUtils;
 import com.ibashkimi.theme.utils.StyleUtils;
 
-
 public class ProtractorPlumbOverlay extends View {
     private Paint mPaint;
     private int mWidth;

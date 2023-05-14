@@ -5,7 +5,6 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 
-
 fun applyGlobalNightMode(nightMode: String) {
     AppCompatDelegate.setDefaultNightMode(
         when (nightMode) {

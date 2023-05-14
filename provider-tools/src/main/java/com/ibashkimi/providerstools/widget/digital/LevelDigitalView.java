@@ -9,12 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.ibashkimi.provider.providerdata.SensorData;
+import com.ibashkimi.providerstools.R;
 import com.ibashkimi.providerstools.data.DisplayParams;
 import com.ibashkimi.providerstools.data.ProviderDisplay;
-import com.ibashkimi.providerstools.R;
 
 import java.text.DecimalFormat;
-
 
 public class LevelDigitalView extends LinearLayout implements ProviderDisplay {
     private TextView rollText;

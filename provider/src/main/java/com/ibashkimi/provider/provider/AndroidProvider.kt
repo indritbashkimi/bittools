@@ -7,7 +7,6 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.util.Log
 
-
 abstract class AndroidProvider(
     context: Context,
     sensors: IntArray,

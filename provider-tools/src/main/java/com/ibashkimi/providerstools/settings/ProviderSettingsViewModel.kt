@@ -6,9 +6,9 @@ import androidx.lifecycle.*
 import com.ibashkimi.providerstools.data.Section
 import com.ibashkimi.providerstools.data.WidgetDataManager
 import com.ibashkimi.providerstools.data.WidgetItem
-import com.ibashkimi.shared.ext.getStringFlow
 import com.ibashkimi.providerstools.data.preferences
 import com.ibashkimi.shared.Tool
+import com.ibashkimi.shared.ext.getStringFlow
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map
 

@@ -9,7 +9,6 @@ import com.ibashkimi.provider.providerdata.OrientationData;
 import com.ibashkimi.provider.providerdata.SensorData;
 import com.ibashkimi.providerstools.widget.digital.CompactDigitalView;
 
-
 public class CompassDigital extends CompactDigitalView {
 
     private Direction direction;

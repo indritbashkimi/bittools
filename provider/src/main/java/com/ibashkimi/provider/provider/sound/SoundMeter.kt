@@ -2,7 +2,6 @@ package com.ibashkimi.provider.provider.sound
 
 import java.io.IOException
 
-
 interface SoundMeter {
 
     val amplitude: Double

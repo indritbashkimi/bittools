@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ibashkimi.bittools.R
 
-
 class ItemAdapter(
     var tools: List<Item>,
     var unsupportedTools: List<Item>,
@@ -45,6 +44,7 @@ class ItemAdapter(
                     .inflate(R.layout.tool_item_separator, parent, false)
                 SeparatorViewHolder(itemView, listener)
             }
+
             else -> {
                 val itemView =
                     LayoutInflater.from(parent.context).inflate(this.layout, parent, false)

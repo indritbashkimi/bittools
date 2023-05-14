@@ -18,7 +18,6 @@ import com.ibashkimi.theme.utils.StyleUtils;
 
 import java.text.DecimalFormat;
 
-
 public class Ruler1Overlay extends View implements View.OnTouchListener {
     private static final boolean FILL = false;
     private float xTouch;

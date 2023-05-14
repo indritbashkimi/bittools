@@ -5,7 +5,6 @@ import android.content.Context;
 import com.ibashkimi.providerstools.R;
 import com.ibashkimi.theme.utils.MathUtils;
 
-
 public class Direction {
     private float angleInDegree;
     private String unknown;
