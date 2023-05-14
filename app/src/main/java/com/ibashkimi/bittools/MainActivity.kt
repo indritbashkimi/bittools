@@ -5,25 +5,37 @@ import android.content.SharedPreferences
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import com.ibashkimi.providerstools.data.ToolPreferenceHelper
 import com.ibashkimi.providerstools.data.isProviderSupported
-import com.ibashkimi.shared.BitToolsActivity
 import com.ibashkimi.shared.PreferenceHelper
 import com.ibashkimi.shared.Tool
 import com.ibashkimi.theme.activity.applyNavBarColor
 import com.ibashkimi.theme.activity.applyNightMode
+import com.ibashkimi.theme.activity.applyTheme
 import com.ibashkimi.theme.theme.Theme
 import com.ibashkimi.theme.utils.StyleUtils
 import java.util.Locale
 
-class MainActivity : BitToolsActivity(), SharedPreferences.OnSharedPreferenceChangeListener,
+class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener,
     NavController.OnDestinationChangedListener {
+
+    private val preferences: PreferenceHelper by lazy {
+        PreferenceHelper(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         checkFirstRun()
+        if (savedInstanceState == null) {
+            applyNightMode(preferences.nightMode)
+            recreate()
+        }
+
+        applyTheme(preferences.theme)
+        applyNavBarColor(preferences.navBarColor)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         onSharedPreferenceChanged(preferences.sharedPreferences, "keep_screen_on")
