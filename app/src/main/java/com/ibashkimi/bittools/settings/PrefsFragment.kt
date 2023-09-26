@@ -42,10 +42,10 @@ class PrefsFragment : PreferenceFragmentCompat(),
         preferenceManager.sharedPreferences?.unregisterOnSharedPreferenceChangeListener(this)
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when (key) {
             "show_unsupported_tools" -> {
-                val show = sharedPreferences.getBoolean(key, true)
+                val show = sharedPreferences?.getBoolean(key, true) ?: true
                 onShowUnsupportedToolsChanged(show)
             }
         }

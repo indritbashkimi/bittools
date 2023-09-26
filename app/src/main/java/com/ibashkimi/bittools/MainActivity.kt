@@ -54,10 +54,10 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
         super.onStop()
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when (key) {
             "keep_screen_on" -> {
-                val keepOn = sharedPreferences.getBoolean(key, true)
+                val keepOn = sharedPreferences?.getBoolean(key, true) ?: true
                 if (keepOn) {
                     // The current destination, if any, will be immediately sent to your listener.
                     navigationController.addOnDestinationChangedListener(this)
@@ -68,7 +68,9 @@ class MainActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceCh
             }
 
             "screen_rotation" -> {
-                setScreenOrientation(sharedPreferences.getString("screen_rotation", "auto")!!)
+                setScreenOrientation(
+                    sharedPreferences?.getString("screen_rotation", "auto") ?: "auto"
+                )
             }
 
             PreferenceHelper.KEY_THEME -> {
