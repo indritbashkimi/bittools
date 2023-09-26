@@ -1,8 +1,8 @@
 [versions]
-android-compileSdk = "33"
-android-buildTools = "33.0.2"
+android-compileSdk = "34"
+android-buildTools = "34.0.0"
 android-minSdk = "21"
-android-targetSdk = "33"
+android-targetSdk = "34"
 
 androidGradlePlugin = "8.1.1"
 
