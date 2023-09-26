@@ -15,8 +15,8 @@ android {
         applicationId = "com.ibashkimi.bittools"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 21
-        versionName = "1.5.0"
+        versionCode = 23
+        versionName = "1.6.0"
         resourceConfigurations += listOf("en", "it", "sq")
     }
     buildTypes {
